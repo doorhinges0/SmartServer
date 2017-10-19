@@ -103,7 +103,7 @@
     <repository>
         <id>releases</id>
         <name>releases</name>
-        <url>http://192.168.13.130:8081/nexus/content/groups/public/</url>
+        <url>http://192.168.1.107:8081/nexus/content/groups/public/</url>
         <releases>
             <enabled>true</enabled>
         </releases>
@@ -112,12 +112,11 @@
         </snapshots>
     </repository>
 </repositories>
-
 <pluginRepositories>
     <pluginRepository>
         <id>releases</id>
         <name>releases</name>
-        <url>http://192.168.13.130:8081/nexus/content/groups/public/</url>
+        <url>http://192.168.1.107:8081/nexus/content/groups/public/</url>
         <releases>
             <enabled>true</enabled>
         </releases>
@@ -130,18 +129,17 @@
         <url>http://repository.codehaus.org/</url>
     </pluginRepository>
 </pluginRepositories>
-
 <!--deploy jar -->
 <distributionManagement>
     <repository>
         <id>releases</id>
         <name>releases</name>
-        <url>http://192.168.13.130:8081/nexus/content/groups/public/</url>
+        <url>http://192.168.1.107:8081/nexus/content/repositories/releases/</url>
     </repository>
     <snapshotRepository>
         <id>snapshots</id>
         <name>snapshots</name>
-        <url>http://192.168.13.130:8081/nexus/content/groups/public/</url>
+        <url>http://192.168.1.107:8081/nexus/content/repositories/snapshots/</url>
     </snapshotRepository>
 </distributionManagement>
 
