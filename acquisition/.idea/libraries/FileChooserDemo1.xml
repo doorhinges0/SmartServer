@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="FileChooserDemo1">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/demo/plugin/jfc/FileChooserDemo/FileChooserDemo.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

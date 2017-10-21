@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="FullThreadDump">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/demo/management/FullThreadDump/FullThreadDump.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
