@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_swingapplet1" default="compile.module.swingapplet1">
+  <dirname property="module.swingapplet1.basedir" file="${ant.file.module_swingapplet1}"/>
+  
+  <property name="module.jdk.home.swingapplet1" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.swingapplet1" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.swingapplet1" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.swingapplet1" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="swingapplet1.output.dir" value="${module.swingapplet1.basedir}/../../../../../out/production/SwingApplet1"/>
+  <property name="swingapplet1.testoutput.dir" value="${module.swingapplet1.basedir}/../../../../../out/test/SwingApplet1"/>
+  
+  <path id="swingapplet1.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="swingapplet1.module.production.classpath">
+    <path refid="${module.jdk.classpath.swingapplet1}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="swingapplet1.runtime.production.module.classpath">
+    <pathelement location="${swingapplet1.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="swingapplet1.module.classpath">
+    <path refid="${module.jdk.classpath.swingapplet1}"/>
+    <pathelement location="${swingapplet1.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="swingapplet1.runtime.module.classpath">
+    <pathelement location="${swingapplet1.testoutput.dir}"/>
+    <pathelement location="${swingapplet1.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.swingapplet1">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.swingapplet1">
+    <patternset refid="excluded.from.module.swingapplet1"/>
+  </patternset>
+  
+  <path id="swingapplet1.module.sourcepath">
+    <dirset dir="${module.swingapplet1.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.swingapplet1" depends="compile.module.swingapplet1.production,compile.module.swingapplet1.tests" description="Compile module SwingApplet1"/>
+  
+  <target name="compile.module.swingapplet1.production" depends="register.custom.compilers" description="Compile module SwingApplet1; production classes">
+    <mkdir dir="${swingapplet1.output.dir}"/>
+    <javac2 destdir="${swingapplet1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.swingapplet1}/javac">
+      <compilerarg line="${compiler.args.swingapplet1}"/>
+      <bootclasspath refid="swingapplet1.module.bootclasspath"/>
+      <classpath refid="swingapplet1.module.production.classpath"/>
+      <src refid="swingapplet1.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.swingapplet1"/>
+    </javac2>
+    
+    <copy todir="${swingapplet1.output.dir}">
+      <fileset dir="${module.swingapplet1.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.swingapplet1.tests" depends="register.custom.compilers,compile.module.swingapplet1.production" description="compile module SwingApplet1; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.swingapplet1" description="cleanup module">
+    <delete dir="${swingapplet1.output.dir}"/>
+    <delete dir="${swingapplet1.testoutput.dir}"/>
+  </target>
+</project>

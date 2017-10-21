@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dtsjy.mdboss.ucp.dal.gen.dao.UsergroupVOMapper" >
+  <resultMap id="BaseResultMap" type="com.dtsjy.mdboss.ucp.dal.gen.model.UsergroupVO" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="groupcode" property="groupcode" jdbcType="VARCHAR" />
+    <result column="groupname" property="groupname" jdbcType="VARCHAR" />
+    <result column="grouptype" property="grouptype" jdbcType="VARCHAR" />
+    <result column="orgcode" property="orgcode" jdbcType="VARCHAR" />
+    <result column="groupdesc" property="groupdesc" jdbcType="VARCHAR" />
+    <result column="creator" property="creator" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, groupcode, groupname, grouptype, orgcode, groupdesc, creator, createtime
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UsergroupVOExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ucp_usergroup
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ucp_usergroup
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ucp_usergroup
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UsergroupVOExample" >
+    delete from ucp_usergroup
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UsergroupVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into ucp_usergroup (id, groupcode, groupname, 
+      grouptype, orgcode, groupdesc, 
+      creator, createtime)
+    values (#{id,jdbcType=INTEGER}, #{groupcode,jdbcType=VARCHAR}, #{groupname,jdbcType=VARCHAR}, 
+      #{grouptype,jdbcType=VARCHAR}, #{orgcode,jdbcType=VARCHAR}, #{groupdesc,jdbcType=VARCHAR}, 
+      #{creator,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UsergroupVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into ucp_usergroup
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="groupcode != null" >
+        groupcode,
+      </if>
+      <if test="groupname != null" >
+        groupname,
+      </if>
+      <if test="grouptype != null" >
+        grouptype,
+      </if>
+      <if test="orgcode != null" >
+        orgcode,
+      </if>
+      <if test="groupdesc != null" >
+        groupdesc,
+      </if>
+      <if test="creator != null" >
+        creator,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="groupcode != null" >
+        #{groupcode,jdbcType=VARCHAR},
+      </if>
+      <if test="groupname != null" >
+        #{groupname,jdbcType=VARCHAR},
+      </if>
+      <if test="grouptype != null" >
+        #{grouptype,jdbcType=VARCHAR},
+      </if>
+      <if test="orgcode != null" >
+        #{orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="groupdesc != null" >
+        #{groupdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UsergroupVOExample" resultType="java.lang.Integer" >
+    select count(*) from ucp_usergroup
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ucp_usergroup
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.groupcode != null" >
+        groupcode = #{record.groupcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.groupname != null" >
+        groupname = #{record.groupname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.grouptype != null" >
+        grouptype = #{record.grouptype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orgcode != null" >
+        orgcode = #{record.orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.groupdesc != null" >
+        groupdesc = #{record.groupdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.creator != null" >
+        creator = #{record.creator,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createtime != null" >
+        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ucp_usergroup
+    set id = #{record.id,jdbcType=INTEGER},
+      groupcode = #{record.groupcode,jdbcType=VARCHAR},
+      groupname = #{record.groupname,jdbcType=VARCHAR},
+      grouptype = #{record.grouptype,jdbcType=VARCHAR},
+      orgcode = #{record.orgcode,jdbcType=VARCHAR},
+      groupdesc = #{record.groupdesc,jdbcType=VARCHAR},
+      creator = #{record.creator,jdbcType=VARCHAR},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UsergroupVO" >
+    update ucp_usergroup
+    <set >
+      <if test="groupcode != null" >
+        groupcode = #{groupcode,jdbcType=VARCHAR},
+      </if>
+      <if test="groupname != null" >
+        groupname = #{groupname,jdbcType=VARCHAR},
+      </if>
+      <if test="grouptype != null" >
+        grouptype = #{grouptype,jdbcType=VARCHAR},
+      </if>
+      <if test="orgcode != null" >
+        orgcode = #{orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="groupdesc != null" >
+        groupdesc = #{groupdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        creator = #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UsergroupVO" >
+    update ucp_usergroup
+    set groupcode = #{groupcode,jdbcType=VARCHAR},
+      groupname = #{groupname,jdbcType=VARCHAR},
+      grouptype = #{grouptype,jdbcType=VARCHAR},
+      orgcode = #{orgcode,jdbcType=VARCHAR},
+      groupdesc = #{groupdesc,jdbcType=VARCHAR},
+      creator = #{creator,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select resultMap="BaseResultMap" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UsergroupVOExample" id="selectByExampleWithRowbounds" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ucp_usergroup
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+</mapper>

@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/development-new/!svn/ver/3169/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/model/code2name
+END
+LocalNote.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/model/code2name/LocalNote.java
+END
+Code2NameFacade.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/development-new/!svn/ver/1931/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/model/code2name/Code2NameFacade.java
+END
+DefaultCode2Name.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/model/code2name/DefaultCode2Name.java
+END
+Code2NameFacadeImpl.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/development-new/!svn/ver/3165/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/model/code2name/Code2NameFacadeImpl.java
+END
+Node.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/model/code2name/Node.java
+END
+code2name-tepmlate.xml
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/model/code2name/code2name-tepmlate.xml
+END
+Code2NameConfiger.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/model/code2name/Code2NameConfiger.java
+END
+Code2NameUtil.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/development-new/!svn/ver/3169/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/model/code2name/Code2NameUtil.java
+END
+Code2Name.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/model/code2name/Code2Name.java
+END

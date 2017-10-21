@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dtsjy.mdboss.ucp.dal.gen.dao.UserVOMapper" >
+  <resultMap id="BaseResultMap" type="com.dtsjy.mdboss.ucp.dal.gen.model.UserVO" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="usercode" property="usercode" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="orgcode" property="orgcode" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="userrank" property="userrank" jdbcType="VARCHAR" />
+    <result column="userlevel" property="userlevel" jdbcType="VARCHAR" />
+    <result column="positionlevel" property="positionlevel" jdbcType="VARCHAR" />
+    <result column="mobileno" property="mobileno" jdbcType="VARCHAR" />
+    <result column="officephone" property="officephone" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="imnumber" property="imnumber" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="updatetime" property="updatetime" jdbcType="TIMESTAMP" />
+    <result column="avatarcode" property="avatarcode" jdbcType="VARCHAR" />
+    <result column="validatecode" property="validatecode" jdbcType="VARCHAR" />
+    <result column="ikeynumber" property="ikeynumber" jdbcType="VARCHAR" />
+    <result column="userdesc" property="userdesc" jdbcType="VARCHAR" />
+    <result column="leader" property="leader" jdbcType="VARCHAR" />
+    <result column="workno" property="workno" jdbcType="VARCHAR" />
+    <result column="pinyin" property="pinyin" jdbcType="VARCHAR" />
+    <result column="isenabled" property="isenabled" jdbcType="VARCHAR" />
+    <result column="signfilecode" property="signfilecode" jdbcType="VARCHAR" />
+    <result column="extorgcode" property="extorgcode" jdbcType="VARCHAR" />
+    <result column="residentaddresscode" property="residentaddresscode" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="DATE" />
+    <result column="allowance" property="allowance" jdbcType="VARCHAR" />
+    <result column="belongtoorgname" property="belongtoorgname" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, usercode, username, password, orgcode, sex, userrank, userlevel, positionlevel, 
+    mobileno, officephone, email, imnumber, address, updatetime, avatarcode, validatecode, 
+    ikeynumber, userdesc, leader, workno, pinyin, isenabled, signfilecode, extorgcode, 
+    residentaddresscode, birthday, allowance,belongtoorgname
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UserVOExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ucp_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ucp_user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ucp_user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UserVOExample" >
+    delete from ucp_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UserVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into ucp_user (id, usercode, username, 
+      password, orgcode, sex, 
+      userrank, userlevel, positionlevel, 
+      mobileno, officephone, email, 
+      imnumber, address, updatetime, 
+      avatarcode, validatecode, ikeynumber, 
+      userdesc, leader, workno, 
+      pinyin, isenabled, signfilecode, 
+      extorgcode, residentaddresscode, birthday, 
+      allowance,belongtoorgname)
+    values (#{id,jdbcType=INTEGER}, #{usercode,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{orgcode,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{userrank,jdbcType=VARCHAR}, #{userlevel,jdbcType=VARCHAR}, #{positionlevel,jdbcType=VARCHAR}, 
+      #{mobileno,jdbcType=VARCHAR}, #{officephone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, 
+      #{imnumber,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, #{updatetime,jdbcType=TIMESTAMP}, 
+      #{avatarcode,jdbcType=VARCHAR}, #{validatecode,jdbcType=VARCHAR}, #{ikeynumber,jdbcType=VARCHAR}, 
+      #{userdesc,jdbcType=VARCHAR}, #{leader,jdbcType=VARCHAR}, #{workno,jdbcType=VARCHAR}, 
+      #{pinyin,jdbcType=VARCHAR}, #{isenabled,jdbcType=VARCHAR}, #{signfilecode,jdbcType=VARCHAR}, 
+      #{extorgcode,jdbcType=VARCHAR}, #{residentaddresscode,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, 
+      #{allowance,jdbcType=VARCHAR},#{belongtoorgname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UserVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into ucp_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="usercode != null" >
+        usercode,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="orgcode != null" >
+        orgcode,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="userrank != null" >
+        userrank,
+      </if>
+      <if test="userlevel != null" >
+        userlevel,
+      </if>
+      <if test="positionlevel != null" >
+        positionlevel,
+      </if>
+      <if test="mobileno != null" >
+        mobileno,
+      </if>
+      <if test="officephone != null" >
+        officephone,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="imnumber != null" >
+        imnumber,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="updatetime != null" >
+        updatetime,
+      </if>
+      <if test="avatarcode != null" >
+        avatarcode,
+      </if>
+      <if test="validatecode != null" >
+        validatecode,
+      </if>
+      <if test="ikeynumber != null" >
+        ikeynumber,
+      </if>
+      <if test="userdesc != null" >
+        userdesc,
+      </if>
+      <if test="leader != null" >
+        leader,
+      </if>
+      <if test="workno != null" >
+        workno,
+      </if>
+      <if test="pinyin != null" >
+        pinyin,
+      </if>
+      <if test="isenabled != null" >
+        isenabled,
+      </if>
+      <if test="signfilecode != null" >
+        signfilecode,
+      </if>
+      <if test="extorgcode != null" >
+        extorgcode,
+      </if>
+      <if test="residentaddresscode != null" >
+        residentaddresscode,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="allowance != null" >
+        allowance,
+      </if>
+      <if test="belongtoorgname != null" >
+        belongtoorgname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="usercode != null" >
+        #{usercode,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="orgcode != null" >
+        #{orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="userrank != null" >
+        #{userrank,jdbcType=VARCHAR},
+      </if>
+      <if test="userlevel != null" >
+        #{userlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="positionlevel != null" >
+        #{positionlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileno != null" >
+        #{mobileno,jdbcType=VARCHAR},
+      </if>
+      <if test="officephone != null" >
+        #{officephone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="imnumber != null" >
+        #{imnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null" >
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="avatarcode != null" >
+        #{avatarcode,jdbcType=VARCHAR},
+      </if>
+      <if test="validatecode != null" >
+        #{validatecode,jdbcType=VARCHAR},
+      </if>
+      <if test="ikeynumber != null" >
+        #{ikeynumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userdesc != null" >
+        #{userdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="leader != null" >
+        #{leader,jdbcType=VARCHAR},
+      </if>
+      <if test="workno != null" >
+        #{workno,jdbcType=VARCHAR},
+      </if>
+      <if test="pinyin != null" >
+        #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="isenabled != null" >
+        #{isenabled,jdbcType=VARCHAR},
+      </if>
+      <if test="signfilecode != null" >
+        #{signfilecode,jdbcType=VARCHAR},
+      </if>
+      <if test="extorgcode != null" >
+        #{extorgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="residentaddresscode != null" >
+        #{residentaddresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="allowance != null" >
+        #{allowance,jdbcType=VARCHAR},
+      </if>
+      <if test="belongtoorgname != null" >
+        #{belongtoorgname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UserVOExample" resultType="java.lang.Integer" >
+    select count(*) from ucp_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ucp_user
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.usercode != null" >
+        usercode = #{record.usercode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.username != null" >
+        username = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null" >
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orgcode != null" >
+        orgcode = #{record.orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null" >
+        sex = #{record.sex,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userrank != null" >
+        userrank = #{record.userrank,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userlevel != null" >
+        userlevel = #{record.userlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.positionlevel != null" >
+        positionlevel = #{record.positionlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.mobileno != null" >
+        mobileno = #{record.mobileno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.officephone != null" >
+        officephone = #{record.officephone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null" >
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.imnumber != null" >
+        imnumber = #{record.imnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updatetime != null" >
+        updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.avatarcode != null" >
+        avatarcode = #{record.avatarcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.validatecode != null" >
+        validatecode = #{record.validatecode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ikeynumber != null" >
+        ikeynumber = #{record.ikeynumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userdesc != null" >
+        userdesc = #{record.userdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.leader != null" >
+        leader = #{record.leader,jdbcType=VARCHAR},
+      </if>
+      <if test="record.workno != null" >
+        workno = #{record.workno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.pinyin != null" >
+        pinyin = #{record.pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isenabled != null" >
+        isenabled = #{record.isenabled,jdbcType=VARCHAR},
+      </if>
+      <if test="record.signfilecode != null" >
+        signfilecode = #{record.signfilecode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.extorgcode != null" >
+        extorgcode = #{record.extorgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.residentaddresscode != null" >
+        residentaddresscode = #{record.residentaddresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.birthday != null" >
+        birthday = #{record.birthday,jdbcType=DATE},
+      </if>
+      <if test="record.allowance != null" >
+        allowance = #{record.allowance,jdbcType=VARCHAR},
+      </if>
+      <if test="record.belongtoorgname != null" >
+        belongtoorgname = #{record.belongtoorgname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ucp_user
+    set id = #{record.id,jdbcType=INTEGER},
+      usercode = #{record.usercode,jdbcType=VARCHAR},
+      username = #{record.username,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      orgcode = #{record.orgcode,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=VARCHAR},
+      userrank = #{record.userrank,jdbcType=VARCHAR},
+      userlevel = #{record.userlevel,jdbcType=VARCHAR},
+      positionlevel = #{record.positionlevel,jdbcType=VARCHAR},
+      mobileno = #{record.mobileno,jdbcType=VARCHAR},
+      officephone = #{record.officephone,jdbcType=VARCHAR},
+      email = #{record.email,jdbcType=VARCHAR},
+      imnumber = #{record.imnumber,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      updatetime = #{record.updatetime,jdbcType=TIMESTAMP},
+      avatarcode = #{record.avatarcode,jdbcType=VARCHAR},
+      validatecode = #{record.validatecode,jdbcType=VARCHAR},
+      ikeynumber = #{record.ikeynumber,jdbcType=VARCHAR},
+      userdesc = #{record.userdesc,jdbcType=VARCHAR},
+      leader = #{record.leader,jdbcType=VARCHAR},
+      workno = #{record.workno,jdbcType=VARCHAR},
+      pinyin = #{record.pinyin,jdbcType=VARCHAR},
+      isenabled = #{record.isenabled,jdbcType=VARCHAR},
+      signfilecode = #{record.signfilecode,jdbcType=VARCHAR},
+      extorgcode = #{record.extorgcode,jdbcType=VARCHAR},
+      residentaddresscode = #{record.residentaddresscode,jdbcType=VARCHAR},
+      birthday = #{record.birthday,jdbcType=DATE},
+      allowance = #{record.allowance,jdbcType=VARCHAR},
+      belongtoorgname = #{record.belongtoorgname,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UserVO" >
+    update ucp_user
+    <set >
+      <if test="usercode != null" >
+        usercode = #{usercode,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="orgcode != null" >
+        orgcode = #{orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="userrank != null" >
+        userrank = #{userrank,jdbcType=VARCHAR},
+      </if>
+      <if test="userlevel != null" >
+        userlevel = #{userlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="positionlevel != null" >
+        positionlevel = #{positionlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="mobileno != null" >
+        mobileno = #{mobileno,jdbcType=VARCHAR},
+      </if>
+      <if test="officephone != null" >
+        officephone = #{officephone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="imnumber != null" >
+        imnumber = #{imnumber,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="updatetime != null" >
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="avatarcode != null" >
+        avatarcode = #{avatarcode,jdbcType=VARCHAR},
+      </if>
+      <if test="validatecode != null" >
+        validatecode = #{validatecode,jdbcType=VARCHAR},
+      </if>
+      <if test="ikeynumber != null" >
+        ikeynumber = #{ikeynumber,jdbcType=VARCHAR},
+      </if>
+      <if test="userdesc != null" >
+        userdesc = #{userdesc,jdbcType=VARCHAR},
+      </if>
+      <if test="leader != null" >
+        leader = #{leader,jdbcType=VARCHAR},
+      </if>
+      <if test="workno != null" >
+        workno = #{workno,jdbcType=VARCHAR},
+      </if>
+      <if test="pinyin != null" >
+        pinyin = #{pinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="isenabled != null" >
+        isenabled = #{isenabled,jdbcType=VARCHAR},
+      </if>
+      <if test="signfilecode != null" >
+        signfilecode = #{signfilecode,jdbcType=VARCHAR},
+      </if>
+      <if test="extorgcode != null" >
+        extorgcode = #{extorgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="residentaddresscode != null" >
+        residentaddresscode = #{residentaddresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="allowance != null" >
+        allowance = #{allowance,jdbcType=VARCHAR},
+      </if>
+       <if test="belongtoorgname != null" >
+        belongtoorgname = #{belongtoorgname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UserVO" >
+    update ucp_user
+    set usercode = #{usercode,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      orgcode = #{orgcode,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      userrank = #{userrank,jdbcType=VARCHAR},
+      userlevel = #{userlevel,jdbcType=VARCHAR},
+      positionlevel = #{positionlevel,jdbcType=VARCHAR},
+      mobileno = #{mobileno,jdbcType=VARCHAR},
+      officephone = #{officephone,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      imnumber = #{imnumber,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      avatarcode = #{avatarcode,jdbcType=VARCHAR},
+      validatecode = #{validatecode,jdbcType=VARCHAR},
+      ikeynumber = #{ikeynumber,jdbcType=VARCHAR},
+      userdesc = #{userdesc,jdbcType=VARCHAR},
+      leader = #{leader,jdbcType=VARCHAR},
+      workno = #{workno,jdbcType=VARCHAR},
+      pinyin = #{pinyin,jdbcType=VARCHAR},
+      isenabled = #{isenabled,jdbcType=VARCHAR},
+      signfilecode = #{signfilecode,jdbcType=VARCHAR},
+      extorgcode = #{extorgcode,jdbcType=VARCHAR},
+      residentaddresscode = #{residentaddresscode,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      allowance = #{allowance,jdbcType=VARCHAR},
+      belongtoorgname = #{belongtoorgname,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select resultMap="BaseResultMap" parameterType="com.dtsjy.mdboss.ucp.dal.gen.model.UserVOExample" id="selectByExampleWithRowbounds" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ucp_user
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+</mapper>

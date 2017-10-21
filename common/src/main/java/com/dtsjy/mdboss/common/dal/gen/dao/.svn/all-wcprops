@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/dal/gen/dao
+END
+SysParamVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/dal/gen/dao/SysParamVOMapper.java
+END
+ExceptionlogVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/dal/gen/dao/ExceptionlogVOMapper.java
+END
+ServicelogVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/dal/gen/dao/ServicelogVOMapper.java
+END

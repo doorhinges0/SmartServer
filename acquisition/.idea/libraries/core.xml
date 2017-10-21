@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="core">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/core/core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/core/org-openide-filesystems.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

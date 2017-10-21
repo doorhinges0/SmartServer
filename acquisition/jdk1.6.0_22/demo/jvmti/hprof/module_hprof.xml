@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_hprof" default="compile.module.hprof">
+  <dirname property="module.hprof.basedir" file="${ant.file.module_hprof}"/>
+  
+  <property name="module.jdk.home.hprof" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.hprof" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.hprof" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.hprof" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="hprof.output.dir" value="${module.hprof.basedir}/../../../../out/production/hprof"/>
+  <property name="hprof.testoutput.dir" value="${module.hprof.basedir}/../../../../out/test/hprof"/>
+  
+  <path id="hprof.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="hprof.module.production.classpath">
+    <path refid="${module.jdk.classpath.hprof}"/>
+  </path>
+  
+  <path id="hprof.runtime.production.module.classpath">
+    <pathelement location="${hprof.output.dir}"/>
+  </path>
+  
+  <path id="hprof.module.classpath">
+    <path refid="${module.jdk.classpath.hprof}"/>
+    <pathelement location="${hprof.output.dir}"/>
+  </path>
+  
+  <path id="hprof.runtime.module.classpath">
+    <pathelement location="${hprof.testoutput.dir}"/>
+    <pathelement location="${hprof.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.hprof">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.hprof">
+    <patternset refid="excluded.from.module.hprof"/>
+  </patternset>
+  
+  <path id="hprof.module.sourcepath">
+    <dirset dir="${module.hprof.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.hprof" depends="compile.module.hprof.production,compile.module.hprof.tests" description="Compile module hprof"/>
+  
+  <target name="compile.module.hprof.production" depends="register.custom.compilers" description="Compile module hprof; production classes">
+    <mkdir dir="${hprof.output.dir}"/>
+    <javac2 destdir="${hprof.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.hprof}/javac">
+      <compilerarg line="${compiler.args.hprof}"/>
+      <bootclasspath refid="hprof.module.bootclasspath"/>
+      <classpath refid="hprof.module.production.classpath"/>
+      <src refid="hprof.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.hprof"/>
+    </javac2>
+    
+    <copy todir="${hprof.output.dir}">
+      <fileset dir="${module.hprof.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.hprof.tests" depends="register.custom.compilers,compile.module.hprof.production" description="compile module hprof; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.hprof" description="cleanup module">
+    <delete dir="${hprof.output.dir}"/>
+    <delete dir="${hprof.testoutput.dir}"/>
+  </target>
+</project>

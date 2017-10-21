@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_mtrace" default="compile.module.mtrace">
+  <dirname property="module.mtrace.basedir" file="${ant.file.module_mtrace}"/>
+  
+  <property name="module.jdk.home.mtrace" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.mtrace" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.mtrace" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.mtrace" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="mtrace.output.dir" value="${module.mtrace.basedir}/../../../../out/production/mtrace"/>
+  <property name="mtrace.testoutput.dir" value="${module.mtrace.basedir}/../../../../out/test/mtrace"/>
+  
+  <path id="mtrace.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="mtrace.module.production.classpath">
+    <path refid="${module.jdk.classpath.mtrace}"/>
+  </path>
+  
+  <path id="mtrace.runtime.production.module.classpath">
+    <pathelement location="${mtrace.output.dir}"/>
+  </path>
+  
+  <path id="mtrace.module.classpath">
+    <path refid="${module.jdk.classpath.mtrace}"/>
+    <pathelement location="${mtrace.output.dir}"/>
+  </path>
+  
+  <path id="mtrace.runtime.module.classpath">
+    <pathelement location="${mtrace.testoutput.dir}"/>
+    <pathelement location="${mtrace.output.dir}"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.mtrace">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.mtrace">
+    <patternset refid="excluded.from.module.mtrace"/>
+  </patternset>
+  
+  <path id="mtrace.module.sourcepath">
+    <dirset dir="${module.mtrace.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.mtrace" depends="compile.module.mtrace.production,compile.module.mtrace.tests" description="Compile module mtrace"/>
+  
+  <target name="compile.module.mtrace.production" depends="register.custom.compilers" description="Compile module mtrace; production classes">
+    <mkdir dir="${mtrace.output.dir}"/>
+    <javac2 destdir="${mtrace.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.mtrace}/javac">
+      <compilerarg line="${compiler.args.mtrace}"/>
+      <bootclasspath refid="mtrace.module.bootclasspath"/>
+      <classpath refid="mtrace.module.production.classpath"/>
+      <src refid="mtrace.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.mtrace"/>
+    </javac2>
+    
+    <copy todir="${mtrace.output.dir}">
+      <fileset dir="${module.mtrace.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.mtrace.tests" depends="register.custom.compilers,compile.module.mtrace.production" description="compile module mtrace; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.mtrace" description="cleanup module">
+    <delete dir="${mtrace.output.dir}"/>
+    <delete dir="${mtrace.testoutput.dir}"/>
+  </target>
+</project>

@@ -1,0 +1,54 @@
+<component name="libraryTable">
+  <library name="modules1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-progress-ui.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-options.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-sendopts.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-loaders.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-nodes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-dialogs.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-core-output2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-core-execution.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-core-ui.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-core-kit.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-templates.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-settings.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-spi-actions.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-print.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-javahelp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-swing-tabcontrol.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-api-visual.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-core-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-applemenu.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-queries.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-swing-plaf.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-favorites.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-editor-mimelookup.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-api-progress.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-options-keymap.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-editor-mimelookup-impl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-api-annotations-common.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-actions.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-explorer.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-text.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-windows.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-core-io-ui.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-execution.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-core-multiview.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-jdesktop-layout.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-autoupdate-ui.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-options-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-spi-quicksearch.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-masterfs.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-awt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-util-enumerations.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-io.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-swing-outline.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-autoupdate-services.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-compat.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

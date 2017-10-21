@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_java2d1" default="compile.module.java2d1">
+  <dirname property="module.java2d1.basedir" file="${ant.file.module_java2d1}"/>
+  
+  <property name="module.jdk.home.java2d1" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.java2d1" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.java2d1" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.java2d1" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="java2d1.output.dir" value="${module.java2d1.basedir}/../../../../../out/production/Java2D1"/>
+  <property name="java2d1.testoutput.dir" value="${module.java2d1.basedir}/../../../../../out/test/Java2D1"/>
+  
+  <path id="java2d1.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="java2d1.module.production.classpath">
+    <path refid="${module.jdk.classpath.java2d1}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="java2d1.runtime.production.module.classpath">
+    <pathelement location="${java2d1.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="java2d1.module.classpath">
+    <path refid="${module.jdk.classpath.java2d1}"/>
+    <pathelement location="${java2d1.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="java2d1.runtime.module.classpath">
+    <pathelement location="${java2d1.testoutput.dir}"/>
+    <pathelement location="${java2d1.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.java2d1">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.java2d1">
+    <patternset refid="excluded.from.module.java2d1"/>
+  </patternset>
+  
+  <path id="java2d1.module.sourcepath">
+    <dirset dir="${module.java2d1.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.java2d1" depends="compile.module.java2d1.production,compile.module.java2d1.tests" description="Compile module Java2D1"/>
+  
+  <target name="compile.module.java2d1.production" depends="register.custom.compilers" description="Compile module Java2D1; production classes">
+    <mkdir dir="${java2d1.output.dir}"/>
+    <javac2 destdir="${java2d1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.java2d1}/javac">
+      <compilerarg line="${compiler.args.java2d1}"/>
+      <bootclasspath refid="java2d1.module.bootclasspath"/>
+      <classpath refid="java2d1.module.production.classpath"/>
+      <src refid="java2d1.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.java2d1"/>
+    </javac2>
+    
+    <copy todir="${java2d1.output.dir}">
+      <fileset dir="${module.java2d1.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.java2d1.tests" depends="register.custom.compilers,compile.module.java2d1.production" description="compile module Java2D1; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.java2d1" description="cleanup module">
+    <delete dir="${java2d1.output.dir}"/>
+    <delete dir="${java2d1.testoutput.dir}"/>
+  </target>
+</project>

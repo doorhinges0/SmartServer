@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/development-new/!svn/ver/1061/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/cms/dal/gen/dao
+END
+ViewShortcutVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/development-new/!svn/ver/1061/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/cms/dal/gen/dao/ViewShortcutVOMapper.java
+END
+ViewNewsVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/development-new/!svn/ver/1061/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/cms/dal/gen/dao/ViewNewsVOMapper.java
+END
+ViewNotifyVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/development-new/!svn/ver/1061/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/cms/dal/gen/dao/ViewNotifyVOMapper.java
+END

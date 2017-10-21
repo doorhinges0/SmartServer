@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_corba" default="compile.module.corba">
+  <dirname property="module.corba.basedir" file="${ant.file.module_corba}"/>
+  
+  <property name="module.jdk.home.corba" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.corba" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.corba" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.corba" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="corba.output.dir" value="${module.corba.basedir}/../../../../../out/production/corba"/>
+  <property name="corba.testoutput.dir" value="${module.corba.basedir}/../../../../../out/test/corba"/>
+  
+  <path id="corba.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="corba.module.production.classpath">
+    <path refid="${module.jdk.classpath.corba}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="corba.runtime.production.module.classpath">
+    <pathelement location="${corba.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="corba.module.classpath">
+    <path refid="${module.jdk.classpath.corba}"/>
+    <pathelement location="${corba.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="corba.runtime.module.classpath">
+    <pathelement location="${corba.testoutput.dir}"/>
+    <pathelement location="${corba.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.corba">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.corba">
+    <patternset refid="excluded.from.module.corba"/>
+  </patternset>
+  
+  <path id="corba.module.sourcepath">
+    <dirset dir="${module.corba.basedir}">
+      <include name="core"/>
+      <include name="stubs"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.corba" depends="compile.module.corba.production,compile.module.corba.tests" description="Compile module corba"/>
+  
+  <target name="compile.module.corba.production" depends="register.custom.compilers" description="Compile module corba; production classes">
+    <mkdir dir="${corba.output.dir}"/>
+    <javac2 destdir="${corba.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.corba}/javac">
+      <compilerarg line="${compiler.args.corba}"/>
+      <bootclasspath refid="corba.module.bootclasspath"/>
+      <classpath refid="corba.module.production.classpath"/>
+      <src refid="corba.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.corba"/>
+    </javac2>
+    
+    <copy todir="${corba.output.dir}">
+      <fileset dir="${module.corba.basedir}/core">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.corba.basedir}/stubs">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.corba.tests" depends="register.custom.compilers,compile.module.corba.production" description="compile module corba; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.corba" description="cleanup module">
+    <delete dir="${corba.output.dir}"/>
+    <delete dir="${corba.testoutput.dir}"/>
+  </target>
+</project>

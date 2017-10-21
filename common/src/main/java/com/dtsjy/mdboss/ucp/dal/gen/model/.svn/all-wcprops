@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/development-new/!svn/ver/2955/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model
+END
+ViewUsergroupMemberVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/svn/development-new/!svn/ver/1854/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/ViewUsergroupMemberVOExample.java
+END
+UserVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/development-new/!svn/ver/2694/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/UserVOExample.java
+END
+DictGroupVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/development-new/!svn/ver/1241/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/DictGroupVO.java
+END
+WordsCommonuseVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/WordsCommonuseVOExample.java
+END
+ProvinceVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/ProvinceVOExample.java
+END
+ViewUsergroupVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/development-new/!svn/ver/1423/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/ViewUsergroupVOExample.java
+END
+OrgVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/OrgVOExample.java
+END
+InterfdefVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/InterfdefVO.java
+END
+UserRoleVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/UserRoleVOExample.java
+END
+ViewUsergroupMemberVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 144
+/svn/development-new/!svn/ver/1854/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/ViewUsergroupMemberVO.java
+END
+UserVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/development-new/!svn/ver/2955/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/UserVO.java
+END
+DictItemVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/DictItemVOExample.java
+END
+UsergroupMemberVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/development-new/!svn/ver/1402/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/UsergroupMemberVO.java
+END
+CityVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/CityVOExample.java
+END
+WordsCommonuseVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/WordsCommonuseVO.java
+END
+DistrictVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/DistrictVO.java
+END
+ViewUsergroupVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/development-new/!svn/ver/1423/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/ViewUsergroupVO.java
+END
+TableColumnConfigVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/TableColumnConfigVO.java
+END
+UsergroupVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/UsergroupVO.java
+END
+UsergroupMemberVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 147
+/svn/development-new/!svn/ver/1402/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/UsergroupMemberVOExample.java
+END
+UserRoleVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/UserRoleVO.java
+END
+RoleVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/RoleVO.java
+END
+DistrictVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/DistrictVOExample.java
+END
+DictItemVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/DictItemVO.java
+END
+TableColumnConfigVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/TableColumnConfigVOExample.java
+END
+UsergroupVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/development-new/!svn/ver/1591/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/UsergroupVOExample.java
+END
+CityVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 128
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/CityVO.java
+END
+DictGroupVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/svn/development-new/!svn/ver/1241/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/DictGroupVOExample.java
+END
+RoleVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/RoleVOExample.java
+END
+TableConfigVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/TableConfigVO.java
+END
+InterfdefVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 140
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/InterfdefVOExample.java
+END
+ProvinceVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/ProvinceVO.java
+END
+OrgVO.java
+K 25
+svn:wc:ra_dav:version-url
+V 127
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/OrgVO.java
+END
+TableConfigVOExample.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/model/TableConfigVOExample.java
+END

@@ -1,0 +1,31 @@
+package com.dtsjy.mdboss.common.model.codegenerator;
+
+public enum ObjectType {
+	UNDEFINED,
+	
+	FILE,
+	PROCESS,
+	PROCESSINSTANCE,
+	PROJECT,
+	STEP,
+	TASK,
+	ROLE,
+	ORG,
+	USER,
+	USERGROUP,
+	SERIALNO,
+	DICT,
+	FORM,
+	FORMITEM,
+	FORMATTR,
+	PROJECTROLE,
+	SPECIALTYTEMPLATE,
+	CACHET,
+	QRCODE,
+	RMISSUE,
+	PORJECTTEMPLATE,
+	PROJECTPHASE,
+	VOTE,
+	SENDGROUP,
+	VORG;
+}

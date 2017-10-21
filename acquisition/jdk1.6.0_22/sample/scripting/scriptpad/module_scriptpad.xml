@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_scriptpad" default="compile.module.scriptpad">
+  <dirname property="module.scriptpad.basedir" file="${ant.file.module_scriptpad}"/>
+  
+  <property name="module.jdk.home.scriptpad" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.scriptpad" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.scriptpad" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.scriptpad" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="scriptpad.output.dir" value="${module.scriptpad.basedir}/../../../../out/production/scriptpad"/>
+  <property name="scriptpad.testoutput.dir" value="${module.scriptpad.basedir}/../../../../out/test/scriptpad"/>
+  
+  <path id="scriptpad.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="scriptpad.module.production.classpath">
+    <path refid="${module.jdk.classpath.scriptpad}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="scriptpad.runtime.production.module.classpath">
+    <pathelement location="${scriptpad.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="scriptpad.module.classpath">
+    <path refid="${module.jdk.classpath.scriptpad}"/>
+    <pathelement location="${scriptpad.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="scriptpad.runtime.module.classpath">
+    <pathelement location="${scriptpad.testoutput.dir}"/>
+    <pathelement location="${scriptpad.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.scriptpad">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.scriptpad">
+    <patternset refid="excluded.from.module.scriptpad"/>
+  </patternset>
+  
+  <path id="scriptpad.module.sourcepath">
+    <dirset dir="${module.scriptpad.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.scriptpad" depends="compile.module.scriptpad.production,compile.module.scriptpad.tests" description="Compile module scriptpad"/>
+  
+  <target name="compile.module.scriptpad.production" depends="register.custom.compilers" description="Compile module scriptpad; production classes">
+    <mkdir dir="${scriptpad.output.dir}"/>
+    <javac2 destdir="${scriptpad.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.scriptpad}/javac">
+      <compilerarg line="${compiler.args.scriptpad}"/>
+      <bootclasspath refid="scriptpad.module.bootclasspath"/>
+      <classpath refid="scriptpad.module.production.classpath"/>
+      <src refid="scriptpad.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.scriptpad"/>
+    </javac2>
+    
+    <copy todir="${scriptpad.output.dir}">
+      <fileset dir="${module.scriptpad.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.scriptpad.tests" depends="register.custom.compilers,compile.module.scriptpad.production" description="compile module scriptpad; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.scriptpad" description="cleanup module">
+    <delete dir="${scriptpad.output.dir}"/>
+    <delete dir="${scriptpad.testoutput.dir}"/>
+  </target>
+</project>

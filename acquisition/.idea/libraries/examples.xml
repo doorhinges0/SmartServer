@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="examples">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/demo/jpda/examples.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_swingset2" default="compile.module.swingset2">
+  <dirname property="module.swingset2.basedir" file="${ant.file.module_swingset2}"/>
+  
+  <property name="module.jdk.home.swingset2" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.swingset2" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.swingset2" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.swingset2" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="swingset2.output.dir" value="${module.swingset2.basedir}/../../../../../out/production/SwingSet2"/>
+  <property name="swingset2.testoutput.dir" value="${module.swingset2.basedir}/../../../../../out/test/SwingSet2"/>
+  
+  <path id="swingset2.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="swingset2.module.production.classpath">
+    <path refid="${module.jdk.classpath.swingset2}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="swingset2.runtime.production.module.classpath">
+    <pathelement location="${swingset2.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="swingset2.module.classpath">
+    <path refid="${module.jdk.classpath.swingset2}"/>
+    <pathelement location="${swingset2.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="swingset2.runtime.module.classpath">
+    <pathelement location="${swingset2.testoutput.dir}"/>
+    <pathelement location="${swingset2.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.swingset2">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.swingset2">
+    <patternset refid="excluded.from.module.swingset2"/>
+  </patternset>
+  
+  <path id="swingset2.module.sourcepath">
+    <dirset dir="${module.swingset2.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.swingset2" depends="compile.module.swingset2.production,compile.module.swingset2.tests" description="Compile module SwingSet2"/>
+  
+  <target name="compile.module.swingset2.production" depends="register.custom.compilers" description="Compile module SwingSet2; production classes">
+    <mkdir dir="${swingset2.output.dir}"/>
+    <javac2 destdir="${swingset2.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.swingset2}/javac">
+      <compilerarg line="${compiler.args.swingset2}"/>
+      <bootclasspath refid="swingset2.module.bootclasspath"/>
+      <classpath refid="swingset2.module.production.classpath"/>
+      <src refid="swingset2.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.swingset2"/>
+    </javac2>
+    
+    <copy todir="${swingset2.output.dir}">
+      <fileset dir="${module.swingset2.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.swingset2.tests" depends="register.custom.compilers,compile.module.swingset2.production" description="compile module SwingSet2; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.swingset2" description="cleanup module">
+    <delete dir="${swingset2.output.dir}"/>
+    <delete dir="${swingset2.testoutput.dir}"/>
+  </target>
+</project>

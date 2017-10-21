@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_tableexample1" default="compile.module.tableexample1">
+  <dirname property="module.tableexample1.basedir" file="${ant.file.module_tableexample1}"/>
+  
+  <property name="module.jdk.home.tableexample1" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.tableexample1" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.tableexample1" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.tableexample1" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="tableexample1.output.dir" value="${module.tableexample1.basedir}/../../../../../out/production/TableExample1"/>
+  <property name="tableexample1.testoutput.dir" value="${module.tableexample1.basedir}/../../../../../out/test/TableExample1"/>
+  
+  <path id="tableexample1.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="tableexample1.module.production.classpath">
+    <path refid="${module.jdk.classpath.tableexample1}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="tableexample1.runtime.production.module.classpath">
+    <pathelement location="${tableexample1.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="tableexample1.module.classpath">
+    <path refid="${module.jdk.classpath.tableexample1}"/>
+    <pathelement location="${tableexample1.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="tableexample1.runtime.module.classpath">
+    <pathelement location="${tableexample1.testoutput.dir}"/>
+    <pathelement location="${tableexample1.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.tableexample1">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.tableexample1">
+    <patternset refid="excluded.from.module.tableexample1"/>
+  </patternset>
+  
+  <path id="tableexample1.module.sourcepath">
+    <dirset dir="${module.tableexample1.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.tableexample1" depends="compile.module.tableexample1.production,compile.module.tableexample1.tests" description="Compile module TableExample1"/>
+  
+  <target name="compile.module.tableexample1.production" depends="register.custom.compilers" description="Compile module TableExample1; production classes">
+    <mkdir dir="${tableexample1.output.dir}"/>
+    <javac2 destdir="${tableexample1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.tableexample1}/javac">
+      <compilerarg line="${compiler.args.tableexample1}"/>
+      <bootclasspath refid="tableexample1.module.bootclasspath"/>
+      <classpath refid="tableexample1.module.production.classpath"/>
+      <src refid="tableexample1.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.tableexample1"/>
+    </javac2>
+    
+    <copy todir="${tableexample1.output.dir}">
+      <fileset dir="${module.tableexample1.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.tableexample1.tests" depends="register.custom.compilers,compile.module.tableexample1.production" description="compile module TableExample1; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.tableexample1" description="cleanup module">
+    <delete dir="${tableexample1.output.dir}"/>
+    <delete dir="${tableexample1.testoutput.dir}"/>
+  </target>
+</project>

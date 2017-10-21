@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_sampletree" default="compile.module.sampletree">
+  <dirname property="module.sampletree.basedir" file="${ant.file.module_sampletree}"/>
+  
+  <property name="module.jdk.home.sampletree" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.sampletree" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.sampletree" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.sampletree" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="sampletree.output.dir" value="${module.sampletree.basedir}/../../../../../out/production/SampleTree"/>
+  <property name="sampletree.testoutput.dir" value="${module.sampletree.basedir}/../../../../../out/test/SampleTree"/>
+  
+  <path id="sampletree.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="sampletree.module.production.classpath">
+    <path refid="${module.jdk.classpath.sampletree}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="sampletree.runtime.production.module.classpath">
+    <pathelement location="${sampletree.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="sampletree.module.classpath">
+    <path refid="${module.jdk.classpath.sampletree}"/>
+    <pathelement location="${sampletree.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="sampletree.runtime.module.classpath">
+    <pathelement location="${sampletree.testoutput.dir}"/>
+    <pathelement location="${sampletree.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.sampletree">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.sampletree">
+    <patternset refid="excluded.from.module.sampletree"/>
+  </patternset>
+  
+  <path id="sampletree.module.sourcepath">
+    <dirset dir="${module.sampletree.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.sampletree" depends="compile.module.sampletree.production,compile.module.sampletree.tests" description="Compile module SampleTree"/>
+  
+  <target name="compile.module.sampletree.production" depends="register.custom.compilers" description="Compile module SampleTree; production classes">
+    <mkdir dir="${sampletree.output.dir}"/>
+    <javac2 destdir="${sampletree.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.sampletree}/javac">
+      <compilerarg line="${compiler.args.sampletree}"/>
+      <bootclasspath refid="sampletree.module.bootclasspath"/>
+      <classpath refid="sampletree.module.production.classpath"/>
+      <src refid="sampletree.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.sampletree"/>
+    </javac2>
+    
+    <copy todir="${sampletree.output.dir}">
+      <fileset dir="${module.sampletree.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.sampletree.tests" depends="register.custom.compilers,compile.module.sampletree.production" description="compile module SampleTree; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.sampletree" description="cleanup module">
+    <delete dir="${sampletree.output.dir}"/>
+    <delete dir="${sampletree.testoutput.dir}"/>
+  </target>
+</project>

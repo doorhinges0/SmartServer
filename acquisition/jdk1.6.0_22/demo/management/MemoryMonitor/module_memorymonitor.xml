@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_memorymonitor" default="compile.module.memorymonitor">
+  <dirname property="module.memorymonitor.basedir" file="${ant.file.module_memorymonitor}"/>
+  
+  <property name="module.jdk.home.memorymonitor" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.memorymonitor" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.memorymonitor" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.memorymonitor" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="memorymonitor.output.dir" value="${module.memorymonitor.basedir}/../../../../out/production/MemoryMonitor"/>
+  <property name="memorymonitor.testoutput.dir" value="${module.memorymonitor.basedir}/../../../../out/test/MemoryMonitor"/>
+  
+  <path id="memorymonitor.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="memorymonitor.module.production.classpath">
+    <path refid="${module.jdk.classpath.memorymonitor}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="memorymonitor.runtime.production.module.classpath">
+    <pathelement location="${memorymonitor.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="memorymonitor.module.classpath">
+    <path refid="${module.jdk.classpath.memorymonitor}"/>
+    <pathelement location="${memorymonitor.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="memorymonitor.runtime.module.classpath">
+    <pathelement location="${memorymonitor.testoutput.dir}"/>
+    <pathelement location="${memorymonitor.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.memorymonitor">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.memorymonitor">
+    <patternset refid="excluded.from.module.memorymonitor"/>
+  </patternset>
+  
+  <path id="memorymonitor.module.sourcepath">
+    <dirset dir="${module.memorymonitor.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.memorymonitor" depends="compile.module.memorymonitor.production,compile.module.memorymonitor.tests" description="Compile module MemoryMonitor"/>
+  
+  <target name="compile.module.memorymonitor.production" depends="register.custom.compilers" description="Compile module MemoryMonitor; production classes">
+    <mkdir dir="${memorymonitor.output.dir}"/>
+    <javac2 destdir="${memorymonitor.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.memorymonitor}/javac">
+      <compilerarg line="${compiler.args.memorymonitor}"/>
+      <bootclasspath refid="memorymonitor.module.bootclasspath"/>
+      <classpath refid="memorymonitor.module.production.classpath"/>
+      <src refid="memorymonitor.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.memorymonitor"/>
+    </javac2>
+    
+    <copy todir="${memorymonitor.output.dir}">
+      <fileset dir="${module.memorymonitor.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.memorymonitor.tests" depends="register.custom.compilers,compile.module.memorymonitor.production" description="compile module MemoryMonitor; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.memorymonitor" description="cleanup module">
+    <delete dir="${memorymonitor.output.dir}"/>
+    <delete dir="${memorymonitor.testoutput.dir}"/>
+  </target>
+</project>

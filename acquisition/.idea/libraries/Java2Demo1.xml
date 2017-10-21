@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Java2Demo1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/demo/plugin/jfc/Java2D/Java2Demo.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

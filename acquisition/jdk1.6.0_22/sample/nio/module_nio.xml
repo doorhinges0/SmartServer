@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_nio" default="compile.module.nio">
+  <dirname property="module.nio.basedir" file="${ant.file.module_nio}"/>
+  
+  <property name="module.jdk.home.nio" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.nio" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.nio" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.nio" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="nio.output.dir" value="${module.nio.basedir}/../../../out/production/nio"/>
+  <property name="nio.testoutput.dir" value="${module.nio.basedir}/../../../out/test/nio"/>
+  
+  <path id="nio.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="nio.module.production.classpath">
+    <path refid="${module.jdk.classpath.nio}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="nio.runtime.production.module.classpath">
+    <pathelement location="${nio.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="nio.module.classpath">
+    <path refid="${module.jdk.classpath.nio}"/>
+    <pathelement location="${nio.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="nio.runtime.module.classpath">
+    <pathelement location="${nio.testoutput.dir}"/>
+    <pathelement location="${nio.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.nio">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.nio">
+    <patternset refid="excluded.from.module.nio"/>
+  </patternset>
+  
+  <path id="nio.module.sourcepath">
+    <dirset dir="${module.nio.basedir}">
+      <include name="server"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.nio" depends="compile.module.nio.production,compile.module.nio.tests" description="Compile module nio"/>
+  
+  <target name="compile.module.nio.production" depends="register.custom.compilers" description="Compile module nio; production classes">
+    <mkdir dir="${nio.output.dir}"/>
+    <javac2 destdir="${nio.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.nio}/javac">
+      <compilerarg line="${compiler.args.nio}"/>
+      <bootclasspath refid="nio.module.bootclasspath"/>
+      <classpath refid="nio.module.production.classpath"/>
+      <src refid="nio.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.nio"/>
+    </javac2>
+    
+    <copy todir="${nio.output.dir}">
+      <fileset dir="${module.nio.basedir}/server">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.nio.tests" depends="register.custom.compilers,compile.module.nio.production" description="compile module nio; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.nio" description="cleanup module">
+    <delete dir="${nio.output.dir}"/>
+    <delete dir="${nio.testoutput.dir}"/>
+  </target>
+</project>

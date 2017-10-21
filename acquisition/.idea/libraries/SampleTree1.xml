@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SampleTree1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/demo/jfc/SampleTree/SampleTree.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

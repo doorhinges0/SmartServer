@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/development-new/!svn/ver/1931/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/exception
+END
+ExceptionUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/development-new/!svn/ver/1931/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/exception/ExceptionUtils.java
+END
+ServiceException.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/exception/ServiceException.java
+END
+SensibleClone.java
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/development-new/!svn/ver/1931/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/exception/SensibleClone.java
+END

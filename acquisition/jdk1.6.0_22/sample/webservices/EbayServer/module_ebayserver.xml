@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_ebayserver" default="compile.module.ebayserver">
+  <dirname property="module.ebayserver.basedir" file="${ant.file.module_ebayserver}"/>
+  
+  <property name="module.jdk.home.ebayserver" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.ebayserver" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.ebayserver" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.ebayserver" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="ebayserver.output.dir" value="${module.ebayserver.basedir}/../../../../out/production/EbayServer"/>
+  <property name="ebayserver.testoutput.dir" value="${module.ebayserver.basedir}/../../../../out/test/EbayServer"/>
+  
+  <path id="ebayserver.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="ebayserver.module.production.classpath">
+    <path refid="${module.jdk.classpath.ebayserver}"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="ebayserver.runtime.production.module.classpath">
+    <pathelement location="${ebayserver.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="ebayserver.module.classpath">
+    <path refid="${module.jdk.classpath.ebayserver}"/>
+    <pathelement location="${ebayserver.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  <path id="ebayserver.runtime.module.classpath">
+    <pathelement location="${ebayserver.testoutput.dir}"/>
+    <pathelement location="${ebayserver.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+    <path refid="library.modules1.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.ebayserver">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.ebayserver">
+    <patternset refid="excluded.from.module.ebayserver"/>
+  </patternset>
+  
+  <path id="ebayserver.module.sourcepath">
+    <dirset dir="${module.ebayserver.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.ebayserver" depends="compile.module.ebayserver.production,compile.module.ebayserver.tests" description="Compile module EbayServer"/>
+  
+  <target name="compile.module.ebayserver.production" depends="register.custom.compilers" description="Compile module EbayServer; production classes">
+    <mkdir dir="${ebayserver.output.dir}"/>
+    <javac2 destdir="${ebayserver.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.ebayserver}/javac">
+      <compilerarg line="${compiler.args.ebayserver}"/>
+      <bootclasspath refid="ebayserver.module.bootclasspath"/>
+      <classpath refid="ebayserver.module.production.classpath"/>
+      <src refid="ebayserver.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.ebayserver"/>
+    </javac2>
+    
+    <copy todir="${ebayserver.output.dir}">
+      <fileset dir="${module.ebayserver.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.ebayserver.tests" depends="register.custom.compilers,compile.module.ebayserver.production" description="compile module EbayServer; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.ebayserver" description="cleanup module">
+    <delete dir="${ebayserver.output.dir}"/>
+    <delete dir="${ebayserver.testoutput.dir}"/>
+  </target>
+</project>

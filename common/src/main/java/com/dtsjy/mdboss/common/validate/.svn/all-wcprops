@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/development-new/!svn/ver/2383/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/validate
+END
+ValidateEngine.java
+K 25
+svn:wc:ra_dav:version-url
+V 134
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/validate/ValidateEngine.java
+END
+ValidationContext.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/validate/ValidationContext.java
+END
+BaseValidator.java
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/validate/BaseValidator.java
+END
+ValidatorAspect.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/development-new/!svn/ver/2383/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/validate/ValidatorAspect.java
+END

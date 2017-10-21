@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="lib3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/jre/lib/management-agent.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/jre/lib/javaws.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/jre/lib/plugin.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/jre/lib/resources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/jre/lib/charsets.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/jre/lib/deploy.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/jre/lib/rt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/jre/lib/jce.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/jre/lib/alt-rt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/jdk1.6.0_22/jre/lib/jsse.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

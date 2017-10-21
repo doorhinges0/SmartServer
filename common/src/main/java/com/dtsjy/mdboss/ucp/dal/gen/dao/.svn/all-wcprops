@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/development-new/!svn/ver/1854/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao
+END
+DistrictVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/DistrictVOMapper.java
+END
+ProvinceVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/ProvinceVOMapper.java
+END
+ViewUsergroupVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/development-new/!svn/ver/1423/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/ViewUsergroupVOMapper.java
+END
+OrgVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/OrgVOMapper.java
+END
+TableColumnConfigVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/TableColumnConfigVOMapper.java
+END
+UsergroupVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/UsergroupVOMapper.java
+END
+DictGroupVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/development-new/!svn/ver/1241/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/DictGroupVOMapper.java
+END
+UserRoleVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/UserRoleVOMapper.java
+END
+RoleVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/RoleVOMapper.java
+END
+DictItemVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 136
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/DictItemVOMapper.java
+END
+InterfdefVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/InterfdefVOMapper.java
+END
+CityVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/CityVOMapper.java
+END
+TableConfigVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/TableConfigVOMapper.java
+END
+UserVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/UserVOMapper.java
+END
+ViewUsergroupMemberVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 148
+/svn/development-new/!svn/ver/1854/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/ViewUsergroupMemberVOMapper.java
+END
+UsergroupMemberVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/UsergroupMemberVOMapper.java
+END
+WordsCommonuseVOMapper.java
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/ucp/dal/gen/dao/WordsCommonuseVOMapper.java
+END

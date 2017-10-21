@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_fullthreaddump" default="compile.module.fullthreaddump">
+  <dirname property="module.fullthreaddump.basedir" file="${ant.file.module_fullthreaddump}"/>
+  
+  <property name="module.jdk.home.fullthreaddump" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.fullthreaddump" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.fullthreaddump" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.fullthreaddump" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="fullthreaddump.output.dir" value="${module.fullthreaddump.basedir}/../../../../out/production/FullThreadDump"/>
+  <property name="fullthreaddump.testoutput.dir" value="${module.fullthreaddump.basedir}/../../../../out/test/FullThreadDump"/>
+  
+  <path id="fullthreaddump.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="fullthreaddump.module.production.classpath">
+    <path refid="${module.jdk.classpath.fullthreaddump}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="fullthreaddump.runtime.production.module.classpath">
+    <pathelement location="${fullthreaddump.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="fullthreaddump.module.classpath">
+    <path refid="${module.jdk.classpath.fullthreaddump}"/>
+    <pathelement location="${fullthreaddump.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="fullthreaddump.runtime.module.classpath">
+    <pathelement location="${fullthreaddump.testoutput.dir}"/>
+    <pathelement location="${fullthreaddump.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.fullthreaddump">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.fullthreaddump">
+    <patternset refid="excluded.from.module.fullthreaddump"/>
+  </patternset>
+  
+  <path id="fullthreaddump.module.sourcepath">
+    <dirset dir="${module.fullthreaddump.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.fullthreaddump" depends="compile.module.fullthreaddump.production,compile.module.fullthreaddump.tests" description="Compile module FullThreadDump"/>
+  
+  <target name="compile.module.fullthreaddump.production" depends="register.custom.compilers" description="Compile module FullThreadDump; production classes">
+    <mkdir dir="${fullthreaddump.output.dir}"/>
+    <javac2 destdir="${fullthreaddump.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.fullthreaddump}/javac">
+      <compilerarg line="${compiler.args.fullthreaddump}"/>
+      <bootclasspath refid="fullthreaddump.module.bootclasspath"/>
+      <classpath refid="fullthreaddump.module.production.classpath"/>
+      <src refid="fullthreaddump.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.fullthreaddump"/>
+    </javac2>
+    
+    <copy todir="${fullthreaddump.output.dir}">
+      <fileset dir="${module.fullthreaddump.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.fullthreaddump.tests" depends="register.custom.compilers,compile.module.fullthreaddump.production" description="compile module FullThreadDump; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.fullthreaddump" description="cleanup module">
+    <delete dir="${fullthreaddump.output.dir}"/>
+    <delete dir="${fullthreaddump.testoutput.dir}"/>
+  </target>
+</project>

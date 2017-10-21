@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/hbm/jsonvalidate
+END
+ValidateRule.java
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/hbm/jsonvalidate/ValidateRule.java
+END
+ValidateSet.java
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/hbm/jsonvalidate/ValidateSet.java
+END
+Validator.java
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/hbm/jsonvalidate/Validator.java
+END
+ValidateException.java
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/hbm/jsonvalidate/ValidateException.java
+END
+JsonValidateEngine.java
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/hbm/jsonvalidate/JsonValidateEngine.java
+END

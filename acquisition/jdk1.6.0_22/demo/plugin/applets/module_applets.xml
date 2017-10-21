@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_applets" default="compile.module.applets">
+  <dirname property="module.applets.basedir" file="${ant.file.module_applets}"/>
+  
+  <property name="module.jdk.home.applets" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.applets" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.applets" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.applets" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="applets.output.dir" value="${module.applets.basedir}/../../../../out/production/applets"/>
+  <property name="applets.testoutput.dir" value="${module.applets.basedir}/../../../../out/test/applets"/>
+  
+  <path id="applets.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="applets.module.production.classpath">
+    <path refid="${module.jdk.classpath.applets}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="applets.runtime.production.module.classpath">
+    <pathelement location="${applets.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="applets.module.classpath">
+    <path refid="${module.jdk.classpath.applets}"/>
+    <pathelement location="${applets.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="applets.runtime.module.classpath">
+    <pathelement location="${applets.testoutput.dir}"/>
+    <pathelement location="${applets.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.applets">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.applets">
+    <patternset refid="excluded.from.module.applets"/>
+  </patternset>
+  
+  <path id="applets.module.sourcepath">
+    <dirset dir="${module.applets.basedir}">
+      <include name="Animator"/>
+      <include name="ArcTest"/>
+      <include name="BarChart"/>
+      <include name="Blink"/>
+      <include name="CardTest"/>
+      <include name="Clock"/>
+      <include name="DitherTest"/>
+      <include name="DrawTest"/>
+      <include name="Fractal"/>
+      <include name="GraphicsTest"/>
+      <include name="GraphLayout"/>
+      <include name="ImageMap"/>
+      <include name="JumpingBox"/>
+      <include name="MoleculeViewer"/>
+      <include name="NervousText"/>
+      <include name="SimpleGraph"/>
+      <include name="SortDemo"/>
+      <include name="SpreadSheet"/>
+      <include name="TicTacToe"/>
+      <include name="WireFrame"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.applets" depends="compile.module.applets.production,compile.module.applets.tests" description="Compile module applets"/>
+  
+  <target name="compile.module.applets.production" depends="register.custom.compilers" description="Compile module applets; production classes">
+    <mkdir dir="${applets.output.dir}"/>
+    <javac2 destdir="${applets.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.applets}/javac">
+      <compilerarg line="${compiler.args.applets}"/>
+      <bootclasspath refid="applets.module.bootclasspath"/>
+      <classpath refid="applets.module.production.classpath"/>
+      <src refid="applets.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.applets"/>
+    </javac2>
+    
+    <copy todir="${applets.output.dir}">
+      <fileset dir="${module.applets.basedir}/Animator">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/ArcTest">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/BarChart">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/Blink">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/CardTest">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/Clock">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/DitherTest">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/DrawTest">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/Fractal">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/GraphicsTest">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/GraphLayout">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/ImageMap">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/JumpingBox">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/MoleculeViewer">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/NervousText">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/SimpleGraph">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/SortDemo">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/SpreadSheet">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/TicTacToe">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.applets.basedir}/WireFrame">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.applets.tests" depends="register.custom.compilers,compile.module.applets.production" description="compile module applets; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.applets" description="cleanup module">
+    <delete dir="${applets.output.dir}"/>
+    <delete dir="${applets.testoutput.dir}"/>
+  </target>
+</project>

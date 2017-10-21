@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_processing" default="compile.module.processing">
+  <dirname property="module.processing.basedir" file="${ant.file.module_processing}"/>
+  
+  <property name="module.jdk.home.processing" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.processing" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.processing" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.processing" value="-encoding GBK -source 1.6 ${compiler.args}"/>
+  
+  <property name="processing.output.dir" value="${module.processing.basedir}/../../../../out/production/processing"/>
+  <property name="processing.testoutput.dir" value="${module.processing.basedir}/../../../../out/test/processing"/>
+  
+  <path id="processing.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="processing.module.production.classpath">
+    <path refid="${module.jdk.classpath.processing}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="processing.runtime.production.module.classpath">
+    <pathelement location="${processing.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="processing.module.classpath">
+    <path refid="${module.jdk.classpath.processing}"/>
+    <pathelement location="${processing.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  <path id="processing.runtime.module.classpath">
+    <pathelement location="${processing.testoutput.dir}"/>
+    <pathelement location="${processing.output.dir}"/>
+    <path refid="library.lib3.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.processing">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.processing">
+    <patternset refid="excluded.from.module.processing"/>
+  </patternset>
+  
+  <path id="processing.module.sourcepath">
+    <dirset dir="${module.processing.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.processing" depends="compile.module.processing.production,compile.module.processing.tests" description="Compile module processing"/>
+  
+  <target name="compile.module.processing.production" depends="register.custom.compilers" description="Compile module processing; production classes">
+    <mkdir dir="${processing.output.dir}"/>
+    <javac2 destdir="${processing.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.processing}/javac">
+      <compilerarg line="${compiler.args.processing}"/>
+      <bootclasspath refid="processing.module.bootclasspath"/>
+      <classpath refid="processing.module.production.classpath"/>
+      <src refid="processing.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.processing"/>
+    </javac2>
+    
+    <copy todir="${processing.output.dir}">
+      <fileset dir="${module.processing.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.processing.tests" depends="register.custom.compilers,compile.module.processing.production" description="compile module processing; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.processing" description="cleanup module">
+    <delete dir="${processing.output.dir}"/>
+    <delete dir="${processing.testoutput.dir}"/>
+  </target>
+</project>

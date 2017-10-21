@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 132
+/svn/development-new/!svn/ver/2768/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/cache/redis/valueresolver
+END
+CommonObjValueResolver.java
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/development-new/!svn/ver/2768/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/cache/redis/valueresolver/CommonObjValueResolver.java
+END
+DefaultValueResolver.java
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/cache/redis/valueresolver/DefaultValueResolver.java
+END
+Code2NameValueListValueResolver.java
+K 25
+svn:wc:ra_dav:version-url
+V 168
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/cache/redis/valueresolver/Code2NameValueListValueResolver.java
+END
+Code2NameValueResolver.java
+K 25
+svn:wc:ra_dav:version-url
+V 159
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/cache/redis/valueresolver/Code2NameValueResolver.java
+END
+CommonConfigValueResolver.java
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/cache/redis/valueresolver/CommonConfigValueResolver.java
+END
+ValueResolver.java
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/development-new/!svn/ver/526/02%E4%BB%A3%E7%A0%81/common/trunk/src/main/java/com/dtsjy/mdboss/common/cache/redis/valueresolver/ValueResolver.java
+END

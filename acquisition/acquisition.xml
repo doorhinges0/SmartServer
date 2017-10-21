@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="acquisition" default="all">
+  
+  
+  <property file="acquisition.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.bundle/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/.tox/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.ear"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.swc"/>
+    <include name="*.ane"/>
+    <include name="*.egg"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.6" value="${jdk.home.1.6}/bin"/>
+  <path id="jdk.classpath.1.6">
+    <fileset dir="${jdk.home.1.6}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunmscapi.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.6}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.6}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.6"/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.ext1.classpath">
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/ext/jh-2.0_05.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/ext/swing-layout-1.0.4.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/ext/updater.jar"/>
+  </path>
+  
+  <path id="library.lib.classpath">
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/dt.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/htmlconverter.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/jconsole.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/tools.jar"/>
+  </path>
+  
+  <path id="library.lib3.classpath">
+    <pathelement location="${basedir}/jdk1.6.0_22/jre/lib/alt-rt.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/jre/lib/charsets.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/jre/lib/deploy.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/jre/lib/javaws.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/jre/lib/jce.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/jre/lib/jsse.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/jre/lib/management-agent.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/jre/lib/plugin.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/jre/lib/resources.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/jre/lib/rt.jar"/>
+  </path>
+  
+  <path id="library.modules1.classpath">
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-jdesktop-layout.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-api-annotations-common.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-api-progress.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-api-visual.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-core-execution.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-core-io-ui.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-core-multiview.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-core-output2.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-core-ui.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-core-windows.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-core.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-applemenu.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-autoupdate-services.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-autoupdate-ui.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-core-kit.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-editor-mimelookup-impl.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-editor-mimelookup.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-favorites.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-javahelp.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-masterfs.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-options-api.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-options-keymap.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-print.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-progress-ui.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-queries.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-sendopts.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-settings.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-spi-actions.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-modules-templates.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-spi-quicksearch.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-swing-outline.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-swing-plaf.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-netbeans-swing-tabcontrol.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-actions.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-awt.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-compat.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-dialogs.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-execution.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-explorer.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-io.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-loaders.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-nodes.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-options.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-text.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-util-enumerations.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/lib/visualvm/platform11/modules/org-openide-windows.jar"/>
+  </path>
+  
+  <path id="library.servlet.classpath">
+    <pathelement location="${basedir}/jdk1.6.0_22/sample/jnlp/servlet/jardiff.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/sample/jnlp/servlet/jnlp-servlet.jar"/>
+    <pathelement location="${basedir}/jdk1.6.0_22/sample/jnlp/servlet/jnlp.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/module_acquisition.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/plugin/applets/module_applets.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/applets/module_applets1.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/plugin/jfc/CodePointIM/module_codepointim.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jfc/CodePointIM/module_codepointim1.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/sample/jnlp/corba/src/module_corba.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/sample/webservices/EbayClient/module_ebayclient.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/sample/webservices/EbayServer/module_ebayserver.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/plugin/jfc/FileChooserDemo/module_filechooserdemo.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jfc/FileChooserDemo/module_filechooserdemo1.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jfc/Font2DTest/module_font2dtest.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/plugin/jfc/Font2DTest/module_font2dtest1.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/management/FullThreadDump/module_fullthreaddump.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jvmti/heapTracker/module_heaptracker.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jvmti/hprof/module_hprof.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jfc/Java2D/module_java2d.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/plugin/jfc/Java2D/module_java2d1.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/scripting/jconsole-plugin/module_jconsole-plugin.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/sample/jmx/jmx-scandir/module_jmx-scandir.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/management/JTop/module_jtop.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/management/MemoryMonitor/module_memorymonitor.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jfc/Metalworks/module_metalworks.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/plugin/jfc/Metalworks/module_metalworks1.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jvmti/minst/module_minst.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jvmti/mtrace/module_mtrace.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/sample/nio/module_nio.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jfc/Notepad/module_notepad.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/plugin/jfc/Notepad/module_notepad1.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/sample/javac/processing/module_processing.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/sample/jnlp/raf/module_raf.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/plugin/jfc/SampleTree/module_sampletree.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jfc/SampleTree/module_sampletree1.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/sample/scripting/scriptpad/module_scriptpad.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/sample/jnlp/servlet/src/module_servlet.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/sample/jnlp/jreinstaller/src/share/module_share.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jfc/Stylepad/module_stylepad.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/plugin/jfc/Stylepad/module_stylepad1.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jfc/SwingApplet/module_swingapplet.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/plugin/jfc/SwingApplet/module_swingapplet1.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/plugin/jfc/SwingSet2/module_swingset2.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jfc/SwingSet2/module_swingset21.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/jfc/TableExample/module_tableexample.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/plugin/jfc/TableExample/module_tableexample1.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/demo/management/VerboseGC/module_verbosegc.xml"/>
+  
+  <import file="${basedir}/jdk1.6.0_22/sample/jnlp/webpad/src/module_webpad.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.acquisition, clean.module.applets, clean.module.applets1, clean.module.codepointim, clean.module.codepointim1, clean.module.corba, clean.module.ebayclient, clean.module.ebayserver, clean.module.filechooserdemo, clean.module.filechooserdemo1, clean.module.font2dtest, clean.module.font2dtest1, clean.module.fullthreaddump, clean.module.heaptracker, clean.module.hprof, clean.module.java2d, clean.module.java2d1, clean.module.jconsole-plugin, clean.module.jmx-scandir, clean.module.jtop, clean.module.memorymonitor, clean.module.metalworks, clean.module.metalworks1, clean.module.minst, clean.module.mtrace, clean.module.nio, clean.module.notepad, clean.module.notepad1, clean.module.processing, clean.module.raf, clean.module.sampletree, clean.module.sampletree1, clean.module.scriptpad, clean.module.servlet, clean.module.share, clean.module.stylepad, clean.module.stylepad1, clean.module.swingapplet, clean.module.swingapplet1, clean.module.swingset2, clean.module.swingset21, clean.module.tableexample, clean.module.tableexample1, clean.module.verbosegc, clean.module.webpad" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.acquisition, compile.module.applets, compile.module.applets1, compile.module.codepointim, compile.module.codepointim1, compile.module.corba, compile.module.ebayclient, compile.module.ebayserver, compile.module.filechooserdemo, compile.module.filechooserdemo1, compile.module.font2dtest, compile.module.font2dtest1, compile.module.fullthreaddump, compile.module.heaptracker, compile.module.hprof, compile.module.java2d, compile.module.java2d1, compile.module.jconsole-plugin, compile.module.jmx-scandir, compile.module.jtop, compile.module.memorymonitor, compile.module.metalworks, compile.module.metalworks1, compile.module.minst, compile.module.mtrace, compile.module.nio, compile.module.notepad, compile.module.notepad1, compile.module.processing, compile.module.raf, compile.module.sampletree, compile.module.sampletree1, compile.module.scriptpad, compile.module.servlet, compile.module.share, compile.module.stylepad, compile.module.stylepad1, compile.module.swingapplet, compile.module.swingapplet1, compile.module.swingset2, compile.module.swingset21, compile.module.tableexample, compile.module.tableexample1, compile.module.verbosegc, compile.module.webpad" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.acquisition:jar" value="${basedir}/out/artifacts/acquisition_jar"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.acquisition.jar" value="${artifacts.temp.dir}/acquisition.jar"/>
+  </target>
+  
+  <target name="artifact.acquisition:jar" depends="init.artifacts, compile.module.acquisition" description="Build &#39;acquisition:jar&#39; artifact">
+    <property name="artifact.temp.output.acquisition:jar" value="${artifacts.temp.dir}/acquisition_jar"/>
+    <mkdir dir="${artifact.temp.output.acquisition:jar}"/>
+    <jar destfile="${temp.jar.path.acquisition.jar}" duplicate="preserve" filesetmanifest="mergewithoutmain">
+      <zipfileset dir="${acquisition.output.dir}"/>
+      <zipfileset src="${basedir}/jdk1.6.0_22/lib/dt.jar"/>
+      <zipfileset src="${basedir}/jdk1.6.0_22/lib/tools.jar"/>
+      <zipfileset src="${basedir}/jdk1.6.0_22/lib/jconsole.jar"/>
+      <zipfileset src="${basedir}/jdk1.6.0_22/lib/htmlconverter.jar"/>
+      <zipfileset src="${basedir}/lib/htmllexer.jar"/>
+      <zipfileset src="${basedir}/lib/htmlparser.jar"/>
+      <zipfileset src="${basedir}/lib/thumbelina.jar"/>
+      <zipfileset src="${basedir}/lib/acquisition.jar"/>
+      <zipfileset src="${basedir}/lib/sitecapturer.jar"/>
+      <zipfileset src="${basedir}/lib/filterbuilder.jar"/>
+      <zipfileset src="${basedir}/lib/commons-io-2.1.jar"/>
+      <zipfileset src="${basedir}/lib/commons-logging.jar"/>
+      <zipfileset src="${basedir}/lib/acquisition - 副本.jar"/>
+      <zipfileset src="${basedir}/lib/commons-lang-2.3.jar"/>
+      <zipfileset src="${basedir}/lib/commons-collections-3.2.jar"/>
+    </jar>
+    <copy file="${temp.jar.path.acquisition.jar}" tofile="${artifact.temp.output.acquisition:jar}/acquisition.jar"/>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.acquisition:jar" description="Build all artifacts">
+    <mkdir dir="${artifact.output.acquisition:jar}"/>
+    <copy todir="${artifact.output.acquisition:jar}">
+      <fileset dir="${artifact.temp.output.acquisition:jar}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

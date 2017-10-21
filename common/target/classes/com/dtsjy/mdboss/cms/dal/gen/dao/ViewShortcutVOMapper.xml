@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dtsjy.mdboss.cms.dal.gen.dao.ViewShortcutVOMapper" >
+  <resultMap id="BaseResultMap" type="com.dtsjy.mdboss.cms.dal.gen.model.ViewShortcutVO" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="shortcutcode" property="shortcutcode" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="icon" property="icon" jdbcType="VARCHAR" />
+    <result column="linkd" property="linkd" jdbcType="VARCHAR" />
+    <result column="ishow" property="ishow" jdbcType="BIT" />
+    <result column="sortorder" property="sortorder" jdbcType="INTEGER" />
+    <result column="owner" property="owner" jdbcType="VARCHAR" />
+    <result column="creator" property="creator" jdbcType="VARCHAR" />
+    <result column="creatorname" property="creatorname" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="usercode" property="usercode" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, shortcutcode, name, icon, linkd, ishow, sortorder, owner, creator, creatorname, 
+    createtime, usercode
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.dtsjy.mdboss.cms.dal.gen.model.ViewShortcutVOExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from cms_view_shortcut
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.dtsjy.mdboss.cms.dal.gen.model.ViewShortcutVOExample" >
+    delete from cms_view_shortcut
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.dtsjy.mdboss.cms.dal.gen.model.ViewShortcutVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into cms_view_shortcut (id, shortcutcode, name, 
+      icon, linkd, ishow, sortorder, 
+      owner, creator, creatorname, 
+      createtime, usercode)
+    values (#{id,jdbcType=INTEGER}, #{shortcutcode,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{icon,jdbcType=VARCHAR}, #{linkd,jdbcType=VARCHAR}, #{ishow,jdbcType=BIT}, #{sortorder,jdbcType=INTEGER}, 
+      #{owner,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR}, #{creatorname,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{usercode,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dtsjy.mdboss.cms.dal.gen.model.ViewShortcutVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into cms_view_shortcut
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="shortcutcode != null" >
+        shortcutcode,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="icon != null" >
+        icon,
+      </if>
+      <if test="linkd != null" >
+        linkd,
+      </if>
+      <if test="ishow != null" >
+        ishow,
+      </if>
+      <if test="sortorder != null" >
+        sortorder,
+      </if>
+      <if test="owner != null" >
+        owner,
+      </if>
+      <if test="creator != null" >
+        creator,
+      </if>
+      <if test="creatorname != null" >
+        creatorname,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="usercode != null" >
+        usercode,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="shortcutcode != null" >
+        #{shortcutcode,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="icon != null" >
+        #{icon,jdbcType=VARCHAR},
+      </if>
+      <if test="linkd != null" >
+        #{linkd,jdbcType=VARCHAR},
+      </if>
+      <if test="ishow != null" >
+        #{ishow,jdbcType=BIT},
+      </if>
+      <if test="sortorder != null" >
+        #{sortorder,jdbcType=INTEGER},
+      </if>
+      <if test="owner != null" >
+        #{owner,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorname != null" >
+        #{creatorname,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="usercode != null" >
+        #{usercode,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.dtsjy.mdboss.cms.dal.gen.model.ViewShortcutVOExample" resultType="java.lang.Integer" >
+    select count(*) from cms_view_shortcut
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update cms_view_shortcut
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.shortcutcode != null" >
+        shortcutcode = #{record.shortcutcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.icon != null" >
+        icon = #{record.icon,jdbcType=VARCHAR},
+      </if>
+      <if test="record.linkd != null" >
+        linkd = #{record.linkd,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ishow != null" >
+        ishow = #{record.ishow,jdbcType=BIT},
+      </if>
+      <if test="record.sortorder != null" >
+        sortorder = #{record.sortorder,jdbcType=INTEGER},
+      </if>
+      <if test="record.owner != null" >
+        owner = #{record.owner,jdbcType=VARCHAR},
+      </if>
+      <if test="record.creator != null" >
+        creator = #{record.creator,jdbcType=VARCHAR},
+      </if>
+      <if test="record.creatorname != null" >
+        creatorname = #{record.creatorname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createtime != null" >
+        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.usercode != null" >
+        usercode = #{record.usercode,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update cms_view_shortcut
+    set id = #{record.id,jdbcType=INTEGER},
+      shortcutcode = #{record.shortcutcode,jdbcType=VARCHAR},
+      name = #{record.name,jdbcType=VARCHAR},
+      icon = #{record.icon,jdbcType=VARCHAR},
+      linkd = #{record.linkd,jdbcType=VARCHAR},
+      ishow = #{record.ishow,jdbcType=BIT},
+      sortorder = #{record.sortorder,jdbcType=INTEGER},
+      owner = #{record.owner,jdbcType=VARCHAR},
+      creator = #{record.creator,jdbcType=VARCHAR},
+      creatorname = #{record.creatorname,jdbcType=VARCHAR},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      usercode = #{record.usercode,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <select resultMap="BaseResultMap" parameterType="com.dtsjy.mdboss.cms.dal.gen.model.ViewShortcutVOExample" id="selectByExampleWithRowbounds" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from cms_view_shortcut
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+</mapper>
