@@ -6,12 +6,55 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="bitcoin.trader" />
+        <module name="Common" />
         <module name="common" />
+        <module name="fts-common (1)" />
+        <module name="fts-common (2)" />
+        <module name="fts-console (1)" />
+        <module name="fts-console (2)" />
+        <module name="fts-core (1)" />
+        <module name="fts-core (2)" />
+        <module name="fts-hfbp (1)" />
+        <module name="fts-hfbp (2)" />
+        <module name="fts-service (1)" />
+        <module name="fts-service (2)" />
+        <module name="fts-test (1)" />
+        <module name="fts-test (2)" />
+        <module name="fts-web (1)" />
+        <module name="fts-web (2)" />
+        <module name="httpclientutil" />
+        <module name="infrastructure-api" />
+        <module name="infrastructure-api-server" />
+        <module name="pay-common" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.7">
+      <module name="bitcoin.trader" target="1.6" />
       <module name="common" target="1.7" />
-      <module name="pom.base" target="1.5" />
+      <module name="Common" target="1.6" />
+      <module name="fts-common (1)" target="1.6" />
+      <module name="fts-common (2)" target="1.7" />
+      <module name="fts-console (1)" target="1.6" />
+      <module name="fts-console (2)" target="1.6" />
+      <module name="fts-core (1)" target="1.6" />
+      <module name="fts-core (2)" target="1.7" />
+      <module name="fts-hfbp (1)" target="1.6" />
+      <module name="fts-hfbp (2)" target="1.6" />
+      <module name="fts-parent (1)" target="1.7" />
+      <module name="fts-parent (2)" target="1.7" />
+      <module name="fts-service (1)" target="1.6" />
+      <module name="fts-service (2)" target="1.7" />
+      <module name="fts-test (1)" target="1.6" />
+      <module name="fts-test (2)" target="1.6" />
+      <module name="fts-web (1)" target="1.6" />
+      <module name="fts-web (2)" target="1.7" />
+      <module name="httpclientutil" target="1.6" />
+      <module name="infrastructure" target="1.6" />
+      <module name="infrastructure-api" target="1.6" />
+      <module name="infrastructure-api-server" target="1.6" />
+      <module name="pay-common" target="1.6" />
+      <module name="pom.base" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

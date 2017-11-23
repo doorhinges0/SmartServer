@@ -2,10 +2,33 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Common@zyxr/Common.iml" filepath="$PROJECT_DIR$/Common@zyxr/Common.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/SmartServer.iml" filepath="$PROJECT_DIR$/.idea/SmartServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/acquisition/acquisition.iml" filepath="$PROJECT_DIR$/acquisition/acquisition.iml" />
-      <module fileurl="file://$PROJECT_DIR$/common/common.iml" filepath="$PROJECT_DIR$/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bitcointrader/bitcoin.trader.iml" filepath="$PROJECT_DIR$/bitcointrader/bitcoin.trader.iml" />
+      <module fileurl="file://$PROJECT_DIR$/common@sunsise/common.iml" filepath="$PROJECT_DIR$/common@sunsise/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts1030/fts-common/fts-common (1).iml" filepath="$PROJECT_DIR$/fts1030/fts-common/fts-common (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts170210/fts-common/fts-common (2).iml" filepath="$PROJECT_DIR$/fts170210/fts-common/fts-common (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts1030/fts-console/fts-console (1).iml" filepath="$PROJECT_DIR$/fts1030/fts-console/fts-console (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts170210/fts-console/fts-console (2).iml" filepath="$PROJECT_DIR$/fts170210/fts-console/fts-console (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts1030/fts-core/fts-core (1).iml" filepath="$PROJECT_DIR$/fts1030/fts-core/fts-core (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts170210/fts-core/fts-core (2).iml" filepath="$PROJECT_DIR$/fts170210/fts-core/fts-core (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts1030/fts-hfbp/fts-hfbp (1).iml" filepath="$PROJECT_DIR$/fts1030/fts-hfbp/fts-hfbp (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts170210/fts-hfbp/fts-hfbp (2).iml" filepath="$PROJECT_DIR$/fts170210/fts-hfbp/fts-hfbp (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts1030/fts-parent (1).iml" filepath="$PROJECT_DIR$/fts1030/fts-parent (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts170210/fts-parent (2).iml" filepath="$PROJECT_DIR$/fts170210/fts-parent (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts1030/fts-service/fts-service (1).iml" filepath="$PROJECT_DIR$/fts1030/fts-service/fts-service (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts170210/fts-service/fts-service (2).iml" filepath="$PROJECT_DIR$/fts170210/fts-service/fts-service (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts1030/fts-test/fts-test (1).iml" filepath="$PROJECT_DIR$/fts1030/fts-test/fts-test (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts170210/fts-test/fts-test (2).iml" filepath="$PROJECT_DIR$/fts170210/fts-test/fts-test (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts1030/fts-web/fts-web (1).iml" filepath="$PROJECT_DIR$/fts1030/fts-web/fts-web (1).iml" />
+      <module fileurl="file://$PROJECT_DIR$/fts170210/fts-web/fts-web (2).iml" filepath="$PROJECT_DIR$/fts170210/fts-web/fts-web (2).iml" />
+      <module fileurl="file://$PROJECT_DIR$/httpclientutil/httpclientutil.iml" filepath="$PROJECT_DIR$/httpclientutil/httpclientutil.iml" />
+      <module fileurl="file://$PROJECT_DIR$/infrastructure/infrastructure.iml" filepath="$PROJECT_DIR$/infrastructure/infrastructure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/infrastructure/infrastructure-api/infrastructure-api.iml" filepath="$PROJECT_DIR$/infrastructure/infrastructure-api/infrastructure-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/infrastructure/infrastructure-api-server/infrastructure-api-server.iml" filepath="$PROJECT_DIR$/infrastructure/infrastructure-api-server/infrastructure-api-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/jdataprocess/jdataprocess.iml" filepath="$PROJECT_DIR$/jdataprocess/jdataprocess.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pay-common/pay-common.iml" filepath="$PROJECT_DIR$/pay-common/pay-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/rfc-base/pom.base.iml" filepath="$PROJECT_DIR$/rfc-base/pom.base.iml" />
     </modules>
   </component>

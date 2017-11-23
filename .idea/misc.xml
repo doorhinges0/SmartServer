@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/fts1030/fts-console" />
+    <file type="web" url="file://$PROJECT_DIR$/fts1030/fts-web" />
+    <file type="web" url="file://$PROJECT_DIR$/fts170210/fts-console" />
+    <file type="web" url="file://$PROJECT_DIR$/fts170210/fts-web" />
+    <file type="web" url="file://$PROJECT_DIR$/infrastructure/infrastructure-api-server" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/rfc-base/pom.xml" />
         <option value="$PROJECT_DIR$/common/pom.xml" />
+        <option value="$PROJECT_DIR$/httpclientutil/pom.xml" />
+        <option value="$PROJECT_DIR$/pay-common/pom.xml" />
+        <option value="$PROJECT_DIR$/Common@zyxr/pom.xml" />
+        <option value="$PROJECT_DIR$/bitcointrader/pom.xml" />
+        <option value="$PROJECT_DIR$/infrastructure/pom.xml" />
+        <option value="$PROJECT_DIR$/fts1030/pom.xml" />
+        <option value="$PROJECT_DIR$/fts170210/pom.xml" />
+        <option value="$PROJECT_DIR$/common@sunsise/pom.xml" />
       </list>
     </option>
   </component>
@@ -40,7 +55,7 @@
       </profile-state>
     </entry>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" default="false" project-jdk-name="1.7" project-jdk-type="JavaSDK" />
   <component name="SvnBranchConfigurationManager">
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
