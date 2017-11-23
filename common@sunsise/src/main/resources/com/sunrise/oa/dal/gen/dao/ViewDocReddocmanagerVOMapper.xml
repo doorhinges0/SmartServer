@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunrise.oa.dal.gen.dao.ViewDocReddocmanagerVOMapper" >
+  <resultMap id="BaseResultMap" type="com.sunrise.oa.dal.gen.model.ViewDocReddocmanagerVO" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="reddocname" property="reddocname" jdbcType="VARCHAR" />
+    <result column="reddoctype" property="reddoctype" jdbcType="VARCHAR" />
+    <result column="reddoctypename" property="reddoctypename" jdbcType="VARCHAR" />
+    <result column="filecode" property="filecode" jdbcType="VARCHAR" />
+    <result column="creator" property="creator" jdbcType="VARCHAR" />
+    <result column="creatorname" property="creatorname" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="TIMESTAMP" />
+    <result column="isenabled" property="isenabled" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, reddocname, reddoctype, reddoctypename, filecode, creator, creatorname, createtime, 
+    isenabled
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.sunrise.oa.dal.gen.model.ViewDocReddocmanagerVOExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from oa_view_doc_reddocmanager
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.sunrise.oa.dal.gen.model.ViewDocReddocmanagerVOExample" >
+    delete from oa_view_doc_reddocmanager
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.sunrise.oa.dal.gen.model.ViewDocReddocmanagerVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into oa_view_doc_reddocmanager (id, reddocname, reddoctype, 
+      reddoctypename, filecode, creator, 
+      creatorname, createtime, isenabled
+      )
+    values (#{id,jdbcType=INTEGER}, #{reddocname,jdbcType=VARCHAR}, #{reddoctype,jdbcType=VARCHAR}, 
+      #{reddoctypename,jdbcType=VARCHAR}, #{filecode,jdbcType=VARCHAR}, #{creator,jdbcType=VARCHAR}, 
+      #{creatorname,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{isenabled,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunrise.oa.dal.gen.model.ViewDocReddocmanagerVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into oa_view_doc_reddocmanager
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="reddocname != null" >
+        reddocname,
+      </if>
+      <if test="reddoctype != null" >
+        reddoctype,
+      </if>
+      <if test="reddoctypename != null" >
+        reddoctypename,
+      </if>
+      <if test="filecode != null" >
+        filecode,
+      </if>
+      <if test="creator != null" >
+        creator,
+      </if>
+      <if test="creatorname != null" >
+        creatorname,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+      <if test="isenabled != null" >
+        isenabled,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="reddocname != null" >
+        #{reddocname,jdbcType=VARCHAR},
+      </if>
+      <if test="reddoctype != null" >
+        #{reddoctype,jdbcType=VARCHAR},
+      </if>
+      <if test="reddoctypename != null" >
+        #{reddoctypename,jdbcType=VARCHAR},
+      </if>
+      <if test="filecode != null" >
+        #{filecode,jdbcType=VARCHAR},
+      </if>
+      <if test="creator != null" >
+        #{creator,jdbcType=VARCHAR},
+      </if>
+      <if test="creatorname != null" >
+        #{creatorname,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isenabled != null" >
+        #{isenabled,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.sunrise.oa.dal.gen.model.ViewDocReddocmanagerVOExample" resultType="java.lang.Integer" >
+    select count(*) from oa_view_doc_reddocmanager
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update oa_view_doc_reddocmanager
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.reddocname != null" >
+        reddocname = #{record.reddocname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reddoctype != null" >
+        reddoctype = #{record.reddoctype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reddoctypename != null" >
+        reddoctypename = #{record.reddoctypename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.filecode != null" >
+        filecode = #{record.filecode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.creator != null" >
+        creator = #{record.creator,jdbcType=VARCHAR},
+      </if>
+      <if test="record.creatorname != null" >
+        creatorname = #{record.creatorname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createtime != null" >
+        createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.isenabled != null" >
+        isenabled = #{record.isenabled,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update oa_view_doc_reddocmanager
+    set id = #{record.id,jdbcType=INTEGER},
+      reddocname = #{record.reddocname,jdbcType=VARCHAR},
+      reddoctype = #{record.reddoctype,jdbcType=VARCHAR},
+      reddoctypename = #{record.reddoctypename,jdbcType=VARCHAR},
+      filecode = #{record.filecode,jdbcType=VARCHAR},
+      creator = #{record.creator,jdbcType=VARCHAR},
+      creatorname = #{record.creatorname,jdbcType=VARCHAR},
+      createtime = #{record.createtime,jdbcType=TIMESTAMP},
+      isenabled = #{record.isenabled,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <select resultMap="BaseResultMap" parameterType="com.sunrise.oa.dal.gen.model.ViewDocReddocmanagerVOExample" id="selectByExampleWithRowbounds" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from oa_view_doc_reddocmanager
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+</mapper>

@@ -1,0 +1,36 @@
+<!--
+************************************************************
+该dtd文件用于说明excelout.xml文件的配置方式
+
+excelout-config为文档元素,含有最少一个entity子元素
+************************************************************
+-->
+<!ELEMENT excelout-config (consts,excelout+)>
+
+<!ELEMENT consts (const+)>
+
+<!ELEMENT const (#PCDATA)>
+<!ATTLIST const
+			name CDATA #REQUIRED
+>
+
+<!ELEMENT excelout (outfilename,entity+)>
+
+<!ATTLIST excelout
+			id ID #REQUIRED
+>
+<!--
+***********************************************************
+ 指定导出文件的名称
+***********************************************************
+-->
+<!ELEMENT outfilename (#PCDATA)>
+
+<!ELEMENT entity EMPTY>
+<!ATTLIST entity
+			ref CDATA #REQUIRED
+>
+
+<!--
+end of export.dtd
+-->

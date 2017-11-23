@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<!DOCTYPE excelout-config SYSTEM "export.dtd" >-->
+<!DOCTYPE excelout-config[
+<!--
+************************************************************
+该dtd文件用于说明excelout.xml文件的配置方式
+
+excelout-config为文档元素,含有最少一个entity子元素
+************************************************************
+-->
+<!ELEMENT excelout-config (consts,excelout+)>
+
+<!ELEMENT consts (const+)>
+
+<!ELEMENT const (#PCDATA)>
+<!ATTLIST const
+			name CDATA #REQUIRED
+>
+
+<!ELEMENT excelout (outfilename,entity+,paramconverter*)>
+
+<!ATTLIST excelout
+			id ID #REQUIRED
+>
+<!--
+***********************************************************
+ 指定导出文件的名称
+***********************************************************
+-->
+<!ELEMENT outfilename (#PCDATA)>
+
+<!ELEMENT entity EMPTY>
+<!ATTLIST entity
+			ref CDATA #REQUIRED
+>
+
+<!ELEMENT paramconverter (#PCDATA)>
+<!--
+end of export.dtd
+-->
+]>
+<excelout-config>
+	<consts>
+		<const name="pagesize">100</const>
+		<const name="maxpages">600</const>
+	</consts>
+	
+	<excelout id="id_2">
+		<outfilename>角色数据</outfilename>
+		<entity ref="com.sunrise.jop.business.system.user.role.persistent.RoleVO" />
+	</excelout>
+	
+	<excelout id="id_3">
+		<outfilename>组织结构数据</outfilename>
+		<entity ref="com.sunrise.jop.business.system.org.org.persistent.OrgVO" />
+	</excelout>
+	
+	<excelout id="id_4">
+		<outfilename>管理日志数据</outfilename>
+		<entity ref="com.sunrise.jop.business.system.function.businesslog.managelog.persistent.ManagelogVO" />
+	</excelout>
+	
+	<excelout id="id_5">
+		<outfilename>菜单数据</outfilename>
+		<entity ref="com.sunrise.jop.business.system.module.persistent.ModuleVO" />
+	</excelout>
+	
+	<excelout id="id_6">
+		<outfilename>权限数据</outfilename>
+		<entity ref="com.sunrise.jop.business.system.permission.perm.persistent.PermVO" />
+	</excelout>
+	<excelout id="id_7">
+		<outfilename>操作员数据</outfilename>
+		<entity ref="com.sunrise.jop.business.system.user.operator.persistent.OperatorVO" />
+	</excelout>
+	<excelout id="id_8">
+		<outfilename>支出文档 数据</outfilename>
+		<entity ref="com.sunrise.jop.business.test.costdocument.persistent.CostDocumentVO" />
+	</excelout>
+	<excelout id="id_9">
+	<outfilename>数据</outfilename>
+	<entity ref="com.sunrise.jop.business.test.contract.persistent.ContractVO" />
+</excelout>
+</excelout-config>

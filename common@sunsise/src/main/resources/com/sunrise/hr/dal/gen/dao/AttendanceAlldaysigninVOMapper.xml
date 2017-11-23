@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.sunrise.hr.dal.gen.dao.AttendanceAlldaysigninVOMapper" >
+  <resultMap id="BaseResultMap" type="com.sunrise.hr.dal.gen.model.AttendanceAlldaysigninVO" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="signinmonth" property="signinmonth" jdbcType="VARCHAR" />
+    <result column="signindate" property="signindate" jdbcType="VARCHAR" />
+    <result column="daytype" property="daytype" jdbcType="VARCHAR" />
+    <result column="daytypename" property="daytypename" jdbcType="VARCHAR" />
+    <result column="usercode" property="usercode" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="workno" property="workno" jdbcType="VARCHAR" />
+    <result column="orgcode" property="orgcode" jdbcType="VARCHAR" />
+    <result column="orgname" property="orgname" jdbcType="VARCHAR" />
+    <result column="positionlevel" property="positionlevel" jdbcType="VARCHAR" />
+    <result column="residentaddresscode" property="residentaddresscode" jdbcType="VARCHAR" />
+    <result column="belongprovince" property="belongprovince" jdbcType="VARCHAR" />
+    <result column="isspecialzone" property="isspecialzone" jdbcType="VARCHAR" />
+    <result column="signintime" property="signintime" jdbcType="VARCHAR" />
+    <result column="signintype" property="signintype" jdbcType="VARCHAR" />
+    <result column="signinaddress" property="signinaddress" jdbcType="VARCHAR" />
+    <result column="deviceid" property="deviceid" jdbcType="VARCHAR" />
+    <result column="signinresidentaddress" property="signinresidentaddress" jdbcType="VARCHAR" />
+    <result column="signinaddresstype" property="signinaddresstype" jdbcType="VARCHAR" />
+    <result column="residentaddressname" property="residentaddressname" jdbcType="VARCHAR" />
+    <result column="belongtoorgname" property="belongtoorgname" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, signinmonth, signindate, daytype, daytypename, usercode, username, workno, orgcode, 
+    orgname, positionlevel, residentaddresscode, belongprovince, isspecialzone, signintime, 
+    signintype, signinaddress, deviceid, signinresidentaddress, signinaddresstype, residentaddressname, 
+    belongtoorgname
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.sunrise.hr.dal.gen.model.AttendanceAlldaysigninVOExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from hr_attendance_alldaysignin
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from hr_attendance_alldaysignin
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from hr_attendance_alldaysignin
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.sunrise.hr.dal.gen.model.AttendanceAlldaysigninVOExample" >
+    delete from hr_attendance_alldaysignin
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.sunrise.hr.dal.gen.model.AttendanceAlldaysigninVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into hr_attendance_alldaysignin (id, signinmonth, signindate, 
+      daytype, daytypename, usercode, 
+      username, workno, orgcode, 
+      orgname, positionlevel, residentaddresscode, 
+      belongprovince, isspecialzone, signintime, 
+      signintype, signinaddress, deviceid, 
+      signinresidentaddress, signinaddresstype, 
+      residentaddressname, belongtoorgname)
+    values (#{id,jdbcType=INTEGER}, #{signinmonth,jdbcType=VARCHAR}, #{signindate,jdbcType=VARCHAR}, 
+      #{daytype,jdbcType=VARCHAR}, #{daytypename,jdbcType=VARCHAR}, #{usercode,jdbcType=VARCHAR}, 
+      #{username,jdbcType=VARCHAR}, #{workno,jdbcType=VARCHAR}, #{orgcode,jdbcType=VARCHAR}, 
+      #{orgname,jdbcType=VARCHAR}, #{positionlevel,jdbcType=VARCHAR}, #{residentaddresscode,jdbcType=VARCHAR}, 
+      #{belongprovince,jdbcType=VARCHAR}, #{isspecialzone,jdbcType=VARCHAR}, #{signintime,jdbcType=VARCHAR}, 
+      #{signintype,jdbcType=VARCHAR}, #{signinaddress,jdbcType=VARCHAR}, #{deviceid,jdbcType=VARCHAR}, 
+      #{signinresidentaddress,jdbcType=VARCHAR}, #{signinaddresstype,jdbcType=VARCHAR}, 
+      #{residentaddressname,jdbcType=VARCHAR}, #{belongtoorgname,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.sunrise.hr.dal.gen.model.AttendanceAlldaysigninVO" useGeneratedKeys="true" keyProperty="id" >
+    insert into hr_attendance_alldaysignin
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="signinmonth != null" >
+        signinmonth,
+      </if>
+      <if test="signindate != null" >
+        signindate,
+      </if>
+      <if test="daytype != null" >
+        daytype,
+      </if>
+      <if test="daytypename != null" >
+        daytypename,
+      </if>
+      <if test="usercode != null" >
+        usercode,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="workno != null" >
+        workno,
+      </if>
+      <if test="orgcode != null" >
+        orgcode,
+      </if>
+      <if test="orgname != null" >
+        orgname,
+      </if>
+      <if test="positionlevel != null" >
+        positionlevel,
+      </if>
+      <if test="residentaddresscode != null" >
+        residentaddresscode,
+      </if>
+      <if test="belongprovince != null" >
+        belongprovince,
+      </if>
+      <if test="isspecialzone != null" >
+        isspecialzone,
+      </if>
+      <if test="signintime != null" >
+        signintime,
+      </if>
+      <if test="signintype != null" >
+        signintype,
+      </if>
+      <if test="signinaddress != null" >
+        signinaddress,
+      </if>
+      <if test="deviceid != null" >
+        deviceid,
+      </if>
+      <if test="signinresidentaddress != null" >
+        signinresidentaddress,
+      </if>
+      <if test="signinaddresstype != null" >
+        signinaddresstype,
+      </if>
+      <if test="residentaddressname != null" >
+        residentaddressname,
+      </if>
+      <if test="belongtoorgname != null" >
+        belongtoorgname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="signinmonth != null" >
+        #{signinmonth,jdbcType=VARCHAR},
+      </if>
+      <if test="signindate != null" >
+        #{signindate,jdbcType=VARCHAR},
+      </if>
+      <if test="daytype != null" >
+        #{daytype,jdbcType=VARCHAR},
+      </if>
+      <if test="daytypename != null" >
+        #{daytypename,jdbcType=VARCHAR},
+      </if>
+      <if test="usercode != null" >
+        #{usercode,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="workno != null" >
+        #{workno,jdbcType=VARCHAR},
+      </if>
+      <if test="orgcode != null" >
+        #{orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgname != null" >
+        #{orgname,jdbcType=VARCHAR},
+      </if>
+      <if test="positionlevel != null" >
+        #{positionlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="residentaddresscode != null" >
+        #{residentaddresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="belongprovince != null" >
+        #{belongprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="isspecialzone != null" >
+        #{isspecialzone,jdbcType=VARCHAR},
+      </if>
+      <if test="signintime != null" >
+        #{signintime,jdbcType=VARCHAR},
+      </if>
+      <if test="signintype != null" >
+        #{signintype,jdbcType=VARCHAR},
+      </if>
+      <if test="signinaddress != null" >
+        #{signinaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceid != null" >
+        #{deviceid,jdbcType=VARCHAR},
+      </if>
+      <if test="signinresidentaddress != null" >
+        #{signinresidentaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="signinaddresstype != null" >
+        #{signinaddresstype,jdbcType=VARCHAR},
+      </if>
+      <if test="residentaddressname != null" >
+        #{residentaddressname,jdbcType=VARCHAR},
+      </if>
+      <if test="belongtoorgname != null" >
+        #{belongtoorgname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.sunrise.hr.dal.gen.model.AttendanceAlldaysigninVOExample" resultType="java.lang.Integer" >
+    select count(*) from hr_attendance_alldaysignin
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update hr_attendance_alldaysignin
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.signinmonth != null" >
+        signinmonth = #{record.signinmonth,jdbcType=VARCHAR},
+      </if>
+      <if test="record.signindate != null" >
+        signindate = #{record.signindate,jdbcType=VARCHAR},
+      </if>
+      <if test="record.daytype != null" >
+        daytype = #{record.daytype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.daytypename != null" >
+        daytypename = #{record.daytypename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.usercode != null" >
+        usercode = #{record.usercode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.username != null" >
+        username = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.workno != null" >
+        workno = #{record.workno,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orgcode != null" >
+        orgcode = #{record.orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.orgname != null" >
+        orgname = #{record.orgname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.positionlevel != null" >
+        positionlevel = #{record.positionlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.residentaddresscode != null" >
+        residentaddresscode = #{record.residentaddresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="record.belongprovince != null" >
+        belongprovince = #{record.belongprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isspecialzone != null" >
+        isspecialzone = #{record.isspecialzone,jdbcType=VARCHAR},
+      </if>
+      <if test="record.signintime != null" >
+        signintime = #{record.signintime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.signintype != null" >
+        signintype = #{record.signintype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.signinaddress != null" >
+        signinaddress = #{record.signinaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deviceid != null" >
+        deviceid = #{record.deviceid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.signinresidentaddress != null" >
+        signinresidentaddress = #{record.signinresidentaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="record.signinaddresstype != null" >
+        signinaddresstype = #{record.signinaddresstype,jdbcType=VARCHAR},
+      </if>
+      <if test="record.residentaddressname != null" >
+        residentaddressname = #{record.residentaddressname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.belongtoorgname != null" >
+        belongtoorgname = #{record.belongtoorgname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update hr_attendance_alldaysignin
+    set id = #{record.id,jdbcType=INTEGER},
+      signinmonth = #{record.signinmonth,jdbcType=VARCHAR},
+      signindate = #{record.signindate,jdbcType=VARCHAR},
+      daytype = #{record.daytype,jdbcType=VARCHAR},
+      daytypename = #{record.daytypename,jdbcType=VARCHAR},
+      usercode = #{record.usercode,jdbcType=VARCHAR},
+      username = #{record.username,jdbcType=VARCHAR},
+      workno = #{record.workno,jdbcType=VARCHAR},
+      orgcode = #{record.orgcode,jdbcType=VARCHAR},
+      orgname = #{record.orgname,jdbcType=VARCHAR},
+      positionlevel = #{record.positionlevel,jdbcType=VARCHAR},
+      residentaddresscode = #{record.residentaddresscode,jdbcType=VARCHAR},
+      belongprovince = #{record.belongprovince,jdbcType=VARCHAR},
+      isspecialzone = #{record.isspecialzone,jdbcType=VARCHAR},
+      signintime = #{record.signintime,jdbcType=VARCHAR},
+      signintype = #{record.signintype,jdbcType=VARCHAR},
+      signinaddress = #{record.signinaddress,jdbcType=VARCHAR},
+      deviceid = #{record.deviceid,jdbcType=VARCHAR},
+      signinresidentaddress = #{record.signinresidentaddress,jdbcType=VARCHAR},
+      signinaddresstype = #{record.signinaddresstype,jdbcType=VARCHAR},
+      residentaddressname = #{record.residentaddressname,jdbcType=VARCHAR},
+      belongtoorgname = #{record.belongtoorgname,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sunrise.hr.dal.gen.model.AttendanceAlldaysigninVO" >
+    update hr_attendance_alldaysignin
+    <set >
+      <if test="signinmonth != null" >
+        signinmonth = #{signinmonth,jdbcType=VARCHAR},
+      </if>
+      <if test="signindate != null" >
+        signindate = #{signindate,jdbcType=VARCHAR},
+      </if>
+      <if test="daytype != null" >
+        daytype = #{daytype,jdbcType=VARCHAR},
+      </if>
+      <if test="daytypename != null" >
+        daytypename = #{daytypename,jdbcType=VARCHAR},
+      </if>
+      <if test="usercode != null" >
+        usercode = #{usercode,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="workno != null" >
+        workno = #{workno,jdbcType=VARCHAR},
+      </if>
+      <if test="orgcode != null" >
+        orgcode = #{orgcode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgname != null" >
+        orgname = #{orgname,jdbcType=VARCHAR},
+      </if>
+      <if test="positionlevel != null" >
+        positionlevel = #{positionlevel,jdbcType=VARCHAR},
+      </if>
+      <if test="residentaddresscode != null" >
+        residentaddresscode = #{residentaddresscode,jdbcType=VARCHAR},
+      </if>
+      <if test="belongprovince != null" >
+        belongprovince = #{belongprovince,jdbcType=VARCHAR},
+      </if>
+      <if test="isspecialzone != null" >
+        isspecialzone = #{isspecialzone,jdbcType=VARCHAR},
+      </if>
+      <if test="signintime != null" >
+        signintime = #{signintime,jdbcType=VARCHAR},
+      </if>
+      <if test="signintype != null" >
+        signintype = #{signintype,jdbcType=VARCHAR},
+      </if>
+      <if test="signinaddress != null" >
+        signinaddress = #{signinaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceid != null" >
+        deviceid = #{deviceid,jdbcType=VARCHAR},
+      </if>
+      <if test="signinresidentaddress != null" >
+        signinresidentaddress = #{signinresidentaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="signinaddresstype != null" >
+        signinaddresstype = #{signinaddresstype,jdbcType=VARCHAR},
+      </if>
+      <if test="residentaddressname != null" >
+        residentaddressname = #{residentaddressname,jdbcType=VARCHAR},
+      </if>
+      <if test="belongtoorgname != null" >
+        belongtoorgname = #{belongtoorgname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sunrise.hr.dal.gen.model.AttendanceAlldaysigninVO" >
+    update hr_attendance_alldaysignin
+    set signinmonth = #{signinmonth,jdbcType=VARCHAR},
+      signindate = #{signindate,jdbcType=VARCHAR},
+      daytype = #{daytype,jdbcType=VARCHAR},
+      daytypename = #{daytypename,jdbcType=VARCHAR},
+      usercode = #{usercode,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      workno = #{workno,jdbcType=VARCHAR},
+      orgcode = #{orgcode,jdbcType=VARCHAR},
+      orgname = #{orgname,jdbcType=VARCHAR},
+      positionlevel = #{positionlevel,jdbcType=VARCHAR},
+      residentaddresscode = #{residentaddresscode,jdbcType=VARCHAR},
+      belongprovince = #{belongprovince,jdbcType=VARCHAR},
+      isspecialzone = #{isspecialzone,jdbcType=VARCHAR},
+      signintime = #{signintime,jdbcType=VARCHAR},
+      signintype = #{signintype,jdbcType=VARCHAR},
+      signinaddress = #{signinaddress,jdbcType=VARCHAR},
+      deviceid = #{deviceid,jdbcType=VARCHAR},
+      signinresidentaddress = #{signinresidentaddress,jdbcType=VARCHAR},
+      signinaddresstype = #{signinaddresstype,jdbcType=VARCHAR},
+      residentaddressname = #{residentaddressname,jdbcType=VARCHAR},
+      belongtoorgname = #{belongtoorgname,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select resultMap="BaseResultMap" parameterType="com.sunrise.hr.dal.gen.model.AttendanceAlldaysigninVOExample" id="selectByExampleWithRowbounds" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from hr_attendance_alldaysignin
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+</mapper>
