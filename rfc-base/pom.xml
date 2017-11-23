@@ -9,6 +9,8 @@
 <version>0.0.2</version>
 <packaging>pom</packaging>
 
+    <!-- configcenter 和 dubbo 暂时屏蔽，没有编译出来 -->
+
 <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.build.targetJDK>1.7</project.build.targetJDK>
@@ -78,15 +80,22 @@
     <testng.version>6.9.6</testng.version>
     <mockito.version>1.8.5</mockito.version>
 
+    <!--  dubbo 暂时没有编译出来 -->
+    <!--
     <dubbo.version>2.8.18</dubbo.version>
+    -->
     <zookeeper.version>3.4.6</zookeeper.version>
     <zkclient.version>0.1</zkclient.version>
     <curator.version>1.1.16</curator.version>
 
+
     <aspectjrt.version>1.7.1</aspectjrt.version>
     <aspectjweaver.version>1.7.1</aspectjweaver.version>
     <druid.version>1.0.14</druid.version>
+    <!-- configcenter 暂时没有编译出来 -->
+    <!--
     <configcenter.common.version>0.0.5-SNAPSHOT</configcenter.common.version>
+     -->
     <com.github.jsqlparser>0.9.7</com.github.jsqlparser>
     <!--<com.github.jsqlparser>0.9.4-SNAPSHOT</com.github.jsqlparser> -->
     <geronimo.validation.version>1.1</geronimo.validation.version>
@@ -146,11 +155,14 @@
 <!--dependencyManagement 公共jar包版本管理，父模块定义version，子模块使用时仍然需要添加dependency,但不再添加version -->
 <dependencyManagement>
     <dependencies>
+        <!-- 不知道这个模块的作用 -->
+        <!--
         <dependency>
             <groupId>rfc.smart</groupId>
             <artifactId>smart-remoting</artifactId>
             <version>${smart-remoting.version}</version>
         </dependency>
+        -->
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -441,6 +453,8 @@
         <!-- test end -->
 
         <!-- dubbo -->
+        <!--  dubbo 暂时没有编译出来 -->
+        <!--
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
@@ -452,6 +466,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        -->
         <dependency>
             <artifactId>log4j</artifactId>
             <groupId>log4j</groupId>
@@ -498,38 +513,42 @@
             <scope>runtime</scope>
         </dependency>
 
-        <dependency>
-            <groupId>rfc.smart.configcenter</groupId>
-            <artifactId>configcenter.common</artifactId>
-            <version>${configcenter.common.version}</version>
-        </dependency>
 
-        <dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-validation_1.0_spec</artifactId>
-            <version>${geronimo.validation.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.bval</groupId>
-            <artifactId>org.apache.bval.bundle</artifactId>
-            <version>${bval.bundle.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper</artifactId>
-            <version>${mybatis.pageHelper.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.jsqlparser</groupId>
-            <artifactId>jsqlparser</artifactId>
-            <version>${com.github.jsqlparser}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.alibaba.rocketmq</groupId>
-            <artifactId>rocketmq-client</artifactId>
-            <version>${com.alibaba.rocketmq.version}</version>
-        </dependency>
-    </dependencies>
+        <!-- 配置中心还没有搞起来，暂时注释 -->
+    <!--
+    <dependency>
+        <groupId>rfc.smart.configcenter</groupId>
+        <artifactId>configcenter.common</artifactId>
+        <version>${configcenter.common.version}</version>
+    </dependency>
+    -->
+
+    <dependency>
+        <groupId>org.apache.geronimo.specs</groupId>
+        <artifactId>geronimo-validation_1.0_spec</artifactId>
+        <version>${geronimo.validation.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>org.apache.bval</groupId>
+        <artifactId>org.apache.bval.bundle</artifactId>
+        <version>${bval.bundle.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>com.github.pagehelper</groupId>
+        <artifactId>pagehelper</artifactId>
+        <version>${mybatis.pageHelper.version}</version>
+    </dependency>
+    <dependency>
+        <groupId>com.github.jsqlparser</groupId>
+        <artifactId>jsqlparser</artifactId>
+        <version>${com.github.jsqlparser}</version>
+    </dependency>
+    <dependency>
+        <groupId>com.alibaba.rocketmq</groupId>
+        <artifactId>rocketmq-client</artifactId>
+        <version>${com.alibaba.rocketmq.version}</version>
+    </dependency>
+</dependencies>
 </dependencyManagement>
 
 <!-- 公共依赖的包 -->
