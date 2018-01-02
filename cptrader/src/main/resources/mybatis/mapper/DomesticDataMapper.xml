@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.rfc.spider.dao.DomesticDataMapper" >
+  <resultMap id="BaseResultMap" type="com.rfc.spider.entity.DomesticData" >
+    <result column="batchno" property="batchno" jdbcType="INTEGER" />
+    <result column="biztype" property="biztype" jdbcType="INTEGER" />
+    <result column="handicap" property="handicap" jdbcType="INTEGER" />
+    <result column="company" property="company" jdbcType="VARCHAR" />
+    <result column="subcompany" property="subcompany" jdbcType="VARCHAR" />
+    <result column="team" property="team" jdbcType="VARCHAR" />
+    <result column="seqtime" property="seqtime" jdbcType="VARCHAR" />
+    <result column="wratio" property="wratio" jdbcType="FLOAT" />
+    <result column="dratio" property="dratio" jdbcType="FLOAT" />
+    <result column="lratio" property="lratio" jdbcType="FLOAT" />
+    <result column="ratio1" property="ratio1" jdbcType="FLOAT" />
+    <result column="ratio2" property="ratio2" jdbcType="FLOAT" />
+    <result column="cahandicap" property="cahandicap" jdbcType="VARCHAR" />
+    <result column="createdate" property="createdate" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    batchno, biztype, handicap, company, subcompany, team, seqtime, wratio, dratio, lratio, 
+    ratio1, ratio2, cahandicap, createdate
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.rfc.spider.entity.DomesticDataExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_domestic_data
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.rfc.spider.entity.DomesticDataExample" >
+    delete from t_domestic_data
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.rfc.spider.entity.DomesticData" >
+    insert into t_domestic_data (batchno, biztype, handicap, 
+      company, subcompany, team, 
+      seqtime, wratio, dratio, 
+      lratio, ratio1, ratio2, cahandicap, 
+      createdate)
+    values (#{batchno,jdbcType=INTEGER}, #{biztype,jdbcType=INTEGER}, #{handicap,jdbcType=INTEGER}, 
+      #{company,jdbcType=VARCHAR}, #{subcompany,jdbcType=VARCHAR}, #{team,jdbcType=VARCHAR}, 
+      #{seqtime,jdbcType=VARCHAR}, #{wratio,jdbcType=FLOAT}, #{dratio,jdbcType=FLOAT}, 
+      #{lratio,jdbcType=FLOAT}, #{ratio1,jdbcType=FLOAT}, #{ratio2,jdbcType=FLOAT}, #{cahandicap,jdbcType=VARCHAR}, 
+      #{createdate,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.rfc.spider.entity.DomesticData" >
+    insert into t_domestic_data
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="batchno != null" >
+        batchno,
+      </if>
+      <if test="biztype != null" >
+        biztype,
+      </if>
+      <if test="handicap != null" >
+        handicap,
+      </if>
+      <if test="company != null" >
+        company,
+      </if>
+      <if test="subcompany != null" >
+        subcompany,
+      </if>
+      <if test="team != null" >
+        team,
+      </if>
+      <if test="seqtime != null" >
+        seqtime,
+      </if>
+      <if test="wratio != null" >
+        wratio,
+      </if>
+      <if test="dratio != null" >
+        dratio,
+      </if>
+      <if test="lratio != null" >
+        lratio,
+      </if>
+      <if test="ratio1 != null" >
+        ratio1,
+      </if>
+      <if test="ratio2 != null" >
+        ratio2,
+      </if>
+      <if test="cahandicap != null" >
+        cahandicap,
+      </if>
+      <if test="createdate != null" >
+        createdate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="batchno != null" >
+        #{batchno,jdbcType=INTEGER},
+      </if>
+      <if test="biztype != null" >
+        #{biztype,jdbcType=INTEGER},
+      </if>
+      <if test="handicap != null" >
+        #{handicap,jdbcType=INTEGER},
+      </if>
+      <if test="company != null" >
+        #{company,jdbcType=VARCHAR},
+      </if>
+      <if test="subcompany != null" >
+        #{subcompany,jdbcType=VARCHAR},
+      </if>
+      <if test="team != null" >
+        #{team,jdbcType=VARCHAR},
+      </if>
+      <if test="seqtime != null" >
+        #{seqtime,jdbcType=VARCHAR},
+      </if>
+      <if test="wratio != null" >
+        #{wratio,jdbcType=FLOAT},
+      </if>
+      <if test="dratio != null" >
+        #{dratio,jdbcType=FLOAT},
+      </if>
+      <if test="lratio != null" >
+        #{lratio,jdbcType=FLOAT},
+      </if>
+      <if test="ratio1 != null" >
+        #{ratio1,jdbcType=FLOAT},
+      </if>
+      <if test="ratio2 != null" >
+        #{ratio2,jdbcType=FLOAT},
+      </if>
+      <if test="cahandicap != null" >
+        #{cahandicap,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null" >
+        #{createdate,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.rfc.spider.entity.DomesticDataExample" resultType="java.lang.Integer" >
+    select count(*) from t_domestic_data
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_domestic_data
+    <set >
+      <if test="record.batchno != null" >
+        batchno = #{record.batchno,jdbcType=INTEGER},
+      </if>
+      <if test="record.biztype != null" >
+        biztype = #{record.biztype,jdbcType=INTEGER},
+      </if>
+      <if test="record.handicap != null" >
+        handicap = #{record.handicap,jdbcType=INTEGER},
+      </if>
+      <if test="record.company != null" >
+        company = #{record.company,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subcompany != null" >
+        subcompany = #{record.subcompany,jdbcType=VARCHAR},
+      </if>
+      <if test="record.team != null" >
+        team = #{record.team,jdbcType=VARCHAR},
+      </if>
+      <if test="record.seqtime != null" >
+        seqtime = #{record.seqtime,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wratio != null" >
+        wratio = #{record.wratio,jdbcType=FLOAT},
+      </if>
+      <if test="record.dratio != null" >
+        dratio = #{record.dratio,jdbcType=FLOAT},
+      </if>
+      <if test="record.lratio != null" >
+        lratio = #{record.lratio,jdbcType=FLOAT},
+      </if>
+      <if test="record.ratio1 != null" >
+        ratio1 = #{record.ratio1,jdbcType=FLOAT},
+      </if>
+      <if test="record.ratio2 != null" >
+        ratio2 = #{record.ratio2,jdbcType=FLOAT},
+      </if>
+      <if test="record.cahandicap != null" >
+        cahandicap = #{record.cahandicap,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createdate != null" >
+        createdate = #{record.createdate,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_domestic_data
+    set batchno = #{record.batchno,jdbcType=INTEGER},
+      biztype = #{record.biztype,jdbcType=INTEGER},
+      handicap = #{record.handicap,jdbcType=INTEGER},
+      company = #{record.company,jdbcType=VARCHAR},
+      subcompany = #{record.subcompany,jdbcType=VARCHAR},
+      team = #{record.team,jdbcType=VARCHAR},
+      seqtime = #{record.seqtime,jdbcType=VARCHAR},
+      wratio = #{record.wratio,jdbcType=FLOAT},
+      dratio = #{record.dratio,jdbcType=FLOAT},
+      lratio = #{record.lratio,jdbcType=FLOAT},
+      ratio1 = #{record.ratio1,jdbcType=FLOAT},
+      ratio2 = #{record.ratio2,jdbcType=FLOAT},
+      cahandicap = #{record.cahandicap,jdbcType=VARCHAR},
+      createdate = #{record.createdate,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+
+  <!--  parameterType="com.rfc.spider.entity.DomesticDataEntity" -->
+  <insert id="batchInsert" parameterType="java.util.List" >
+    insert into t_domestic_data
+    (
+    batchno,biztype,handicap ,company,team ,wratio,dratio,lratio,ratio1,ratio2,cahandicap,seqtime,subcompany
+    )
+    values
+    <foreach collection="list" item="item" index="index" separator=",">
+      (
+      #{item.batchno}, #{item.biztype}, #{item.handicap}, #{item.company}, #{item.team},#{item.wratio},
+      #{item.dratio},#{item.lratio},#{item.ratio1}, #{item.ratio2},#{item.cahandicap},#{item.seqtime},#{item.subcompany}
+      )
+    </foreach>
+  </insert>
+
+
+</mapper>

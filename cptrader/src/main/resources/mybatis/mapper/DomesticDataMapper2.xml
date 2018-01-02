@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.rfc.spider.dao.DomesticDataDao">
+
+	<!--<resultMap id="BaseResultMap" type="com.rfc.spider.entity.DomesticDataEntity">
+		<result column="id" property="id" jdbcType="BIGINT" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+	</resultMap>-->
+
+	<!--  parameterType="com.rfc.spider.entity.DomesticDataEntity" -->
+	<insert id="batchInsert" parameterType="java.util.List" >
+		insert into t_domestic_data
+		(
+		batchno,biztype,handicap ,company,team ,wratio,dratio,lratio,ratio1,ratio2,cahandicap,seqtime,subcompany
+		)
+		values
+		<foreach collection="list" item="item" index="index" separator=",">
+			(
+			#{item.batchno}, #{item.biztype}, #{item.handicap}, #{item.company}, #{item.team},#{item.wratio},
+			#{item.dratio},#{item.lratio},#{item.ratio1}, #{item.ratio2},#{item.cahandicap},#{item.seqtime},#{item.subcompany}
+			)
+		</foreach>
+	</insert>
+
+	<insert id="oneInsert" parameterType="domesticDataEntity" >
+		insert into t_domestic_data
+		( batchno,biztype,handicap ,company,team ,wratio,dratio,lratio )
+		values (
+		#{item.batchno}, #{item.biztype}, #{item.handicap}, #{item.company}, #{item.team},
+		#{item.wratio}, #{item.dratio},#{item.lratio}
+		)
+	</insert>
+
+	<select id="getOneRecord"  resultType="domesticDataEntity">
+		select * from  t_domestic_data where batchno = 20180101000108
+	</select>
+
+</mapper>

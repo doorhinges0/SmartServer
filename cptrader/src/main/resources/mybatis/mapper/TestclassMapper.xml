@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.rfc.spider.dao.TestDao">
+
+	<resultMap id="BaseResultMap" type="com.rfc.spider.entity.Testclass">
+		<result column="id" property="id" jdbcType="BIGINT" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+	</resultMap>
+
+
+
+	<!--<select id="listAllRecords"  resultMap="com.rfc.spider.entity.Testclass">
+		select * from  t_test
+	</select>-->
+
+	<select id="listAllRecords"  resultMap="BaseResultMap">
+            select * from  t_test
+    </select>
+
+	<select id="getOneRecord"  resultType="testclass">
+		select * from  t_test where id = 11
+	</select>
+
+	<insert id="oneInsert" parameterType="testclass" >
+		insert into t_test
+		( id,name )
+		values (
+		#{item.id}, #{item.name}
+		)
+	</insert>
+
+</mapper>

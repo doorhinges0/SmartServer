@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<!-- <properties url="E:/wgmei/workspace/testmybatis/src/main/resources/jdbc.properties"/> -->
+	<classPathEntry
+		location="E:/lexin/20170612/m2/repository/org/xerial/sqlite-jdbc/3.21.0.1/sqlite-jdbc-3.21.0.1.jar" />
+	<context id="my" targetRuntime="MyBatis3">
+		<commentGenerator>
+			<property name="suppressDate" value="false" />
+			<property name="suppressAllComments" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="org.sqlite.JDBC"
+			connectionURL="jdbc:sqlite:E:/jdataprocess/cptrader/src/main/resources/mybatis/testdb.db3" userId=""
+			password="" />
+
+		<javaModelGenerator targetPackage="com.rfc.spider.entity"
+			targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="com.rfc.spider.entity"
+						 targetProject="src/main/java">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator targetPackage="com.rfc.spider.dao"
+			targetProject="src/main/java" type="XMLMAPPER">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- <table tableName="t_wechat_info" domainObjectName="WechatInfoEntity"> 
+			<generatedKey column="id" sqlStatement="mysql" identity="true"/> </table> -->
+		<!-- <table tableName="t_wechat_task" domainObjectName="WechatTaskEntity"> -->
+		<!-- <generatedKey column="id" sqlStatement="mysql" identity="true"/> -->
+		<!-- </table> -->
+		<!-- <table tableName="t_wechat_category" domainObjectName="WechatCatetoryEntity"> -->
+		<!-- <generatedKey column="id" sqlStatement="mysql" identity="true"/> -->
+		<!-- </table> -->
+		<!-- <table tableName="t_wechat_article_count" domainObjectName="WechatArticleCountEntity"> -->
+		<!-- <generatedKey column="id" sqlStatement="mysql" identity="true"/> -->
+		<!-- </table> -->
+		<table tableName="t_domestic_data" domainObjectName="DomesticData">
+			<!--<generatedKey column="id" sqlStatement="mysql" identity="true" />-->
+		</table>
+	</context>
+</generatorConfiguration>

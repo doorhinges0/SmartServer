@@ -1,0 +1,65 @@
+
+
+
+<result column="ID" property="id" jdbcType="BIGINT" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		
+
+1 打开数据文件 .open  World.db3
+2 显示所有表名  .tables
+3 创建表：		
+		
+CREATE TABLE t_test2(
+   keyid2 BIGINT,
+   name VARCHAR(255),
+   PRIMARY KEY( keyid2 )
+);
+
+4 插入表
+
+INSERT INTO t_test2 (keyid2, name) VALUES (111, "jack1ma");
+INSERT INTO t_test (id, name) VALUES (15, "daveliu");
+
+
+INSERT INTO t_test (id, name) VALUES (17, "17jackma"), (18, "18daveliu");
+
+
+
+5.
+
+public String		company;
+    public Integer		handicap;
+    public Integer     biztype;
+    public String      team;
+//    public Double	    w0ratio;
+//    public Double	    d0ratio;
+//    public Double	    l0ratio;
+    public Double	    wratio;
+    public Double	    dratio;
+    public Double	    lratio;
+
+create table t_domestic_data (
+    batchno         BIGINT default 0, 
+    biztype       	integer default 0,
+	handicap        integer default 0,
+    company         varchar(50),
+	team         	varchar(50),
+	wratio			NUMERIC,
+	dratio			NUMERIC,
+	lratio			NUMERIC,
+    createdate      datetime default (datetime('now', 'localtime'))   
+);
+
+
+insert into t_domestic_data ( batchno,biztype,handicap ,company,team ,wratio,dratio,lratio ) 
+values ( 20180101000188, 1, 0, 'domestic', '0team', 1.0, 2.0, 88.0 ); 
+
+insert into t_domestic_data ( batchno,biztype,handicap ,company,team ,wratio,dratio,lratio ) 
+values ( 20180101000108, 1, 0, domestic, 0team, 1.0, 2.0, 3.0 ); 
+
+select t.*  from t_domestic_data t;
+
+
+
+
+

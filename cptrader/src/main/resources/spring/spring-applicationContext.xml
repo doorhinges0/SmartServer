@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 加载classpath根目录下的properties文件 -->
+    <context:property-placeholder location="classpath*:/*.properties"
+                                  ignore-resource-not-found="true" ignore-unresolvable="true"/>
+
+    <!-- spring容器扫描bean组件的包限定名前缀 -->
+    <context:component-scan base-package="com.rfc.*"/>
+
+
+    <!-- spring容器工具类 -->
+    <bean class="com.rfc.util.spring.SpringContextUtil"/>
+
+    <import resource="classpath:spring/spring-mybatis.xml" />
+
+</beans>
