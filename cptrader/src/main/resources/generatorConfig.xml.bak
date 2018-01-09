@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-	<!-- <properties url="E:/wgmei/workspace/testmybatis/src/main/resources/jdbc.properties"/> -->
+	<!-- <properties url="E:/rfc/workspace/testmybatis/src/main/resources/jdbc.properties"/> -->
 	<classPathEntry
 		location="D:/mavenRepository/com/oracle/ojdbc14/11.0.2.0.3/ojdbc14-11.0.2.0.3.jar" />
 	<context id="my" targetRuntime="MyBatis3">
@@ -14,21 +14,21 @@
 		</commentGenerator>
 
 		<jdbcConnection driverClass="oracle.jdbc.driver.OracleDriver"
-			connectionURL="jdbc:oracle:thin:@192.168.3.254:1521:rrdev" userId="rrjc_d10"
-			password="testrrjc123" />
+			connectionURL="jdbc:oracle:thin:@192.168.3.254:1521:rrdev" userId="rfc_d10"
+			password="testrfc123" />
 
-		<javaModelGenerator targetPackage="com.rrjc.plan.entity"
+		<javaModelGenerator targetPackage="com.rfc.plan.entity"
 			targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
 		</javaModelGenerator>
 
-		<sqlMapGenerator targetPackage="com.rrjc.plan.entity"
+		<sqlMapGenerator targetPackage="com.rfc.plan.entity"
 						 targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 
-		<javaClientGenerator targetPackage="com.rrjc.plan.dao"
+		<javaClientGenerator targetPackage="com.rfc.plan.dao"
 			targetProject="src/main/java" type="XMLMAPPER">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
@@ -49,3 +49,5 @@
 		</table>
 	</context>
 </generatorConfiguration>
+
+
